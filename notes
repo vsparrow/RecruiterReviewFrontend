@@ -13,3 +13,7 @@ end
 def decode(jwt)
   JWT.decode(jwt, "arbi")[0]
 end
+
+hostory only avaialble with react route
+  props.hostory
+  

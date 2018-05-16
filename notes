@@ -1,0 +1,15 @@
+jwt a way to encode info
+JWT.encode({beef: "yo"}, "supersecretkey")
+JWT.encode({user_id: 2}, "supersecretkey")
+a=_  (get last result)
+jwt.decode(a, "supersecretkey")
+*using this for user_id being sent to front end
+
+this will be done in application controller
+
+def encode(payload)
+  JWT.encode(payload, "arbi")
+end
+def decode(jwt)
+  JWT.decode(jwt, "arbi")[0]
+end

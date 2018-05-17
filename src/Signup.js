@@ -27,6 +27,11 @@ class Signup extends Component {
     .then(json=>console.log(json))
   }
 
+  toggleToLogin = ()=>{
+    this.props.displayLoginToggle(true)
+  }
+
+
   render() {
     return (
       <div>
@@ -39,6 +44,9 @@ class Signup extends Component {
           <input type="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
           <input type="submit"/ >
         </form>
+        <p>
+          <button onClick={this.toggleToLogin}>Login here</button>
+        </p>
       </div>
     )
   }//render

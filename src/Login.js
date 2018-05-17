@@ -48,6 +48,10 @@ class Login extends Component {
     this.props.setAuthorization(json.auth_token)
   }
 
+  toggleToSignup = ()=>{
+    this.props.displayLoginToggle(false)
+  }
+
   render() {
     return (
       <div>
@@ -58,10 +62,12 @@ class Login extends Component {
                 <br/>
                 <input type="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
                 <br/>
-                <input type="submit" className="btn btn-primary" />
+                <input type="submit" value="LOGIN" className="btn btn-primary" />
               </form>
             {this.state.errorOnAuthenticate ? <p style={{color: "red"}}>ERROR SUBMITING EMAIL OR PASSSWORD</p> : null}
-
+            <p>
+              <button onClick={this.toggleToSignup}>Signup Here</button>
+            </p>
       </div>
     )
   }//render

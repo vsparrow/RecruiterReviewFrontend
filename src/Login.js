@@ -44,6 +44,8 @@ class Login extends Component {
   handleAuthenticate = (json)=>{
     console.log("handleAuthenticate");
     console.log(json.auth_token);
+    //if successful pass token backup to app
+    this.props.setAuthorization(json.auth_token)
   }
 
   render() {

@@ -9,6 +9,7 @@ class App extends Component {
 
   state = {
     authorization: "",
+    url: "http://127.0.0.1:3000/"
   }
 
   setAuthorization = (token)=>{
@@ -21,7 +22,7 @@ class App extends Component {
     console.log(this.state);
     return (
       <div className="App">
-      { this.state.authorization ? <FirstPage authorization={this.state.authorization}/> : <LoginOrSignup setAuthorization={this.setAuthorization}/>}
+      { this.state.authorization ? <FirstPage state={this.state}/> : <LoginOrSignup setAuthorization={this.setAuthorization}/>}
       </div>
     );
   }

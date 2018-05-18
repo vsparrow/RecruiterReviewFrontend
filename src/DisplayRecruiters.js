@@ -4,6 +4,7 @@ import DisplayRecruiterMinimal from './DisplayRecruiterMinimal'
 class DisplayRecruiters extends Component {
   handleClickOnRec = (id)=>{
     console.log("ID of clicked REC IS: " +id);
+    this.props.selectedRecruiterId(id)
   }
 
   render(){

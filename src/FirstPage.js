@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import DisplayRecruiters from './DisplayRecruiters'
 class FirstPage extends Component {
-  state = {recruiters: []}
+  state = {
+    recruiters: [],
+    selectedRecruiterId: null
+  }
 
   componentDidMount(){
     console.log("mounted");
@@ -23,13 +26,18 @@ class FirstPage extends Component {
     .then(json=>{this.setState({recruiters: json},()=>{console.log(this.state)})
     })
   }//fetchRecruiters
-
+  //////////////////////////////////////////////////////////////////////////////functions to passdown
+  selectedRecruiterId = (id)=>{
+    this.setState({selectedRecruiterId: id},()=>{console.log(this.state)})
+  }
+  //////////////////////////////////////////////////////////////////////////////
   render(){
     let sendState = {...this.state,...this.props.state}
+
     return(
       <div className="FirstPage">
         WELCOME
-        <DisplayRecruiters state={sendState} />
+        <DisplayRecruiters state={sendState} selectedRecruiterId={this.selectedRecruiterId} />
       </div>
     )
   }

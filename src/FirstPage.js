@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import DisplayRecruiters from './DisplayRecruiters'
 class FirstPage extends Component {
   state = {recruiters: []}
 
@@ -25,9 +25,11 @@ class FirstPage extends Component {
   }//fetchRecruiters
 
   render(){
+    let sendState = {...this.state,...this.props.state}
     return(
       <div className="FirstPage">
         WELCOME
+        <DisplayRecruiters state={sendState} />
       </div>
     )
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DisplayRecruiters from './DisplayRecruiters'
+import DisplayRecruiterFull from './DisplayRecruiterFull'
+
 class FirstPage extends Component {
   state = {
     recruiters: [],
@@ -37,7 +39,7 @@ class FirstPage extends Component {
     return(
       <div className="FirstPage">
         WELCOME
-        <DisplayRecruiters state={sendState} selectedRecruiterId={this.selectedRecruiterId} />
+        {this.state.selectedRecruiterId ? <DisplayRecruiterFull state={sendState}/>: <DisplayRecruiters state={sendState} selectedRecruiterId={this.selectedRecruiterId} />}
       </div>
     )
   }

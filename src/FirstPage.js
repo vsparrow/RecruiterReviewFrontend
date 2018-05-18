@@ -10,8 +10,18 @@ class FirstPage extends Component {
 
   fetchRecruiters = ()=>{
     // url = "http://127.0.0.1:3000/"
+    const url = this.props.state.url + "/recruiters"
     console.log("props state");
     console.log(this.props.state);
+    console.log(url);
+    fetch(url,{
+      method: 'GET',
+      headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization}
+    })
+    .then(res=>res.json())
+    // .then(json=>console.log(json))
+    .then(json=>{this.setState({recruiters: json},()=>{console.log(this.state)})
+    })
   }//fetchRecruiters
 
   render(){

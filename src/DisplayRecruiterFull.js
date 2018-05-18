@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DisplayReviewsForSingleRec from './DisplayReviewsForSingleRec'
 
 class DisplayRecruiterFull extends Component {
 
@@ -15,6 +16,8 @@ class DisplayRecruiterFull extends Component {
         <h3>{recruiter.linkedin}</h3>
         <h3>{recruiter.website}</h3>
         <h3>{recruiter.location}</h3>
+
+        <DisplayReviewsForSingleRec state={this.props.state}/>
       </div>
     )
   }

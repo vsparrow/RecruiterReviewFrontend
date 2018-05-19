@@ -20,10 +20,17 @@ class DisplayReviewForSingleRec extends Component {
   render(){
     let review = null;
     let stars = null;
+    let reviewFull = null //<--------added
     if(this.props.review.review){
       review=this.props.review.review.slice(0,30)
       review += "..."
-    }
+      /////////////////////////////////////////////////
+      reviewFull=this.props.review.review
+
+      /////////////////////////////////////////////////
+    }//if this.props.review
+
+
     stars = "*".repeat(this.props.review.rating)
     // }
     ///////////////////////////////////////////////////////
@@ -33,7 +40,7 @@ class DisplayReviewForSingleRec extends Component {
 
     return(
       <div className="DisplayReviewForSingleRec" style={linkStyle} onMouseEnter={this.toggleHover}  onMouseLeave={this.toggleHover}>
-        <h3>{review}</h3>
+        {this.state.show ? <h3>{reviewFull}</h3> : <h3>{review}</h3>}
         <span>Rating: {stars}</span><br/>
         {this.state.show ? <button onClick={this.handleClick}>Less..</button> : <button onClick={this.handleClick}>More..</button>}
       </div>

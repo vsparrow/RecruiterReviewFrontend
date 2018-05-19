@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class DisplayReviewForSingleRec extends Component {
+  state = {hover: false}
+
+  toggleHover =  ()=>{
+    this.setState({hover: !this.state.hover})
+  }
 
   render(){
     let review = null;
@@ -19,10 +24,13 @@ class DisplayReviewForSingleRec extends Component {
     stars = "*".repeat(this.props.review.rating)
     console.log(stars);
     // }
-
+    ///////////////////////////////////////////////////////
+    let linkStyle={};
+    if (this.state.hover) { linkStyle = {backgroundColor: 'blue'}    }
+    else {      linkStyle = {}    }
     // console.log(review);
     return(
-      <div className="DisplayReviewForSingleRec" >
+      <div className="DisplayReviewForSingleRec" style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
         <h3>{review}</h3>
         <span>Rating: {stars}</span>
       </div>

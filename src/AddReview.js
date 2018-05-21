@@ -23,7 +23,11 @@ class AddReview extends Component {
     // console.log(event.target.name);
     console.log(this.props);
     if (event.target.name === "cancel") { this.props.cancelReview()}
-    if (event.target.name === "submit") { this.submitReview()}
+    if (event.target.name === "submit") {
+      // if(this.state.review.length < 15){alert("Review too short. Thank you")}
+      if(this.state.review.length < 15){this.setState({reviewShort: true})}
+      else {this.submitReview()}
+    }
   }
 
   submitReview=()=>{
@@ -73,7 +77,8 @@ class AddReview extends Component {
   render(){
     // console.log(this.props.state);
     // console.log(this.props);
-    console.log(this.state);
+    // console.log(this.state);
+    let note = <span style={{color: "red"}}>*Review must be 15 characters or more to submit</span>
     return(
       <div className="AddReview" >
         <h2>NEW REVIEW</h2>
@@ -83,6 +88,9 @@ class AddReview extends Component {
         <br/>
         <textarea rows="4" cols="60" value={this.state.review} name="review" onChange={this.handleInputChange}/>
         <br/>
+        {this.state.reviewShort ? note : null}
+        <br/>
+
         <button onClick={this.handleSubmit} name="submit" >Submit</button>
         <button onClick={this.handleSubmit} name="cancel">Cancel</button>
       </div>

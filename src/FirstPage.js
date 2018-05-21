@@ -50,7 +50,7 @@ class FirstPage extends Component {
       <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId}/>
 
         WELCOME
-        {this.state.selectedRecruiterId ? <DisplayRecruiterFull state={sendState}  selectedRecruiterId={this.selectedRecruiterId} />: <DisplayRecruiters state={sendState} selectedRecruiterId={this.selectedRecruiterId} />}
+        {this.state.selectedRecruiterId ? <DisplayRecruiterFull state={sendState}  fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId} />: <DisplayRecruiters state={sendState} selectedRecruiterId={this.selectedRecruiterId} />}
       </div>
     )
   }

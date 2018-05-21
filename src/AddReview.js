@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class AddReview extends Component {
-  state={recommended: false, interview: false, job: false, comments: ""}
+  state={recommended: false, interview: false, job: false, review: ""}
 
   handleInputChange = (event)=>{
     const target = event.target;
@@ -34,7 +34,7 @@ class AddReview extends Component {
       body: JSON.stringify({
         user_id: 1, //change this
         recruiter_id: this.props.state.selectedRecruiterId,
-        review: this.state.comments,
+        review: this.state.review,
         got_interview: this.state.interview,
         got_job: this.state.job,
         recommended: this.state.recommended,
@@ -42,8 +42,18 @@ class AddReview extends Component {
       })
     })//fetch
     .then(res=>res.json())
-    .then(json=>console.log(json))
-    // .then(json=>this.handleJSON(json))
+    // .then(json=>console.log(json))
+    .then(json=>this.handleJSON(json))
+  }
+
+  handleJSON = (json)=>{
+    console.log(json);
+    console.log(this.state);
+    if(json["POSTED REVIEW"]){
+      //submit was successful
+      //do some action
+      this.props.fetchRecruiters()
+    }
   }
   // user_id: user.id,
   // recruiter_id: recruiter.id,
@@ -56,7 +66,8 @@ class AddReview extends Component {
 
   render(){
     // console.log(this.props.state);
-    console.log(this.props);
+    // console.log(this.props);
+    console.log(this.state);
     return(
       <div className="AddReview" >
         <h2>NEW REVIEW</h2>
@@ -64,7 +75,7 @@ class AddReview extends Component {
         <br/>GOT AN INTERVIEW?<input name="interview" type="checkbox" checked={this.state.interview} onChange={this.handleInputChange} />
         <br/>GOT AN JOB?<input name="job" type="checkbox" checked={this.state.job} onChange={this.handleInputChange} />
         <br/>
-        <textarea rows="4" cols="60" value={this.state.comments} name="comments" onChange={this.handleInputChange}/>
+        <textarea rows="4" cols="60" value={this.state.review} name="review" onChange={this.handleInputChange}/>
         <br/>
         <button onClick={this.handleSubmit} name="submit" >Submit</button>
         <button onClick={this.handleSubmit} name="cancel">Cancel</button>

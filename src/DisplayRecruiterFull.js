@@ -5,8 +5,11 @@ class DisplayRecruiterFull extends Component {
   state = {addReview: false}
 
   handleClick = ()=>{
-    // console.log(this.props.state);
     this.setState({addReview: true})
+  }
+
+  cancelReview = ()=>{
+    this.setState({addReview: false})
   }
 
   render(){
@@ -23,7 +26,7 @@ class DisplayRecruiterFull extends Component {
         <h3>{recruiter.website}</h3>
         <h3>{recruiter.location}</h3>
         <button onClick={this.handleClick}>ADD REVIEW</button>
-        {this.state.addReview ? <AddReview state={sendState}/> : <DisplayReviewsForSingleRec state={this.props.state}/>}
+        {this.state.addReview ? <AddReview state={sendState} cancelReview={this.cancelReview}/> : <DisplayReviewsForSingleRec state={this.props.state}/>}
       </div>
     )
   }

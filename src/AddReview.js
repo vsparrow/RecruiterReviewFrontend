@@ -52,7 +52,13 @@ class AddReview extends Component {
     if(json["POSTED REVIEW"]){
       //submit was successful
       //do some action
+      // console.log(json);
+      console.log("POSTED REVIEW success");
       this.props.fetchRecruiters()
+      this.props.cancelReview()
+    }
+    else {
+      console.log("POSTED REVIEW not found");
     }
   }
   // user_id: user.id,

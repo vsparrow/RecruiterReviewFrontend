@@ -1,4 +1,4 @@
-
+//called by FirstPage.js
 import React, { Component } from 'react';
 
 class RecruiterNewForm extends Component {
@@ -8,8 +8,38 @@ handleChange = (event)=>{
   this.setState({[event.target.name]: event.target.value})
 }
 
+handleSubmit = (event)=>{
+  // event.preventDefault() //not a submit , not a form.
+
+
+  //handle dusplicated or error checking here: ********************************
+  //handle empty fields ************************
+  //
+
+  //if checks ok post fetch
+
+  //not needed? since componenet will be removed after submittal
+  this.setStat ({ firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""})
+}
+
+submitRecruiter = ()=>{
+  //called by this.handleSubmit
+  let firstname = this.state.firstname
+  let lastname = this.state.lastname
+  let email = this.state.email
+  let phonenumber = this.state.phonenumber
+  let company = this.state.company
+  let website = this.state.website
+  let linkedin = this.state.linkedin
+  let location = this.state.location
+
+
+}
+
 render(){
-    console.log(this.state);
+    // console.log(this.state);
+    console.log("this.props");
+    console.log(this.props);
     return(
     <div className="RecruiterNewForm">
       <h2>RecruiterNewForm</h2>
@@ -33,6 +63,7 @@ render(){
       <label htmlFor="location">Location</label>
       <input type="text" name="location" value={this.state.location} placeholder="" onChange={this.handleChange}/>
       <br/>
+      <button onClick={this.handleSubmit}>SUBMIT</button>
     </div>
   )
 }

@@ -47,7 +47,7 @@ class FirstPage extends Component {
   render(){
     let sendState = {...this.state,...this.props.state}
     let display = null;
-    if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm />}
+    if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm state={sendState}/>}
     else {display = <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>}
     return(
       <div className="FirstPage">

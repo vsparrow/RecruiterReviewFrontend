@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import DisplayRecruiters from './DisplayRecruiters'
-import DisplayRecruiterFull from './DisplayRecruiterFull'
+import FirstPageDisplayRecruitersJunction from './FirstPageDisplayRecruitersJunction'
+// import DisplayRecruiters from './DisplayRecruiters'
+// import DisplayRecruiterFull from './DisplayRecruiterFull'
 import Header from "./Header"
 
 class FirstPage extends Component {
@@ -50,7 +51,7 @@ class FirstPage extends Component {
       <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId}/>
 
         WELCOME
-        {this.state.selectedRecruiterId ? <DisplayRecruiterFull state={sendState}  fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId} />: <DisplayRecruiters state={sendState} selectedRecruiterId={this.selectedRecruiterId} />}
+        <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>
       </div>
     )
   }

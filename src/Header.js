@@ -1,3 +1,4 @@
+// #called by FirstPage.js
 import React, { Component } from 'react';
 
 class Header extends Component {
@@ -14,6 +15,12 @@ class Header extends Component {
       case "addrecruiter":
         this.props.selectedRecruiterId("new")
         break;
+      case "logout":
+        // console.log("logout");
+        // console.log(this.props);
+        // this.props.setSomeState("authorization","")
+        this.props.setLogut()
+        break;
       default:
 
     }
@@ -25,6 +32,7 @@ class Header extends Component {
     // let button2 = <button onClick={this.handleClick} name="signup">SIGNUP</button>
     let button3 = <button onClick={this.handleClick} name="home">HOME</button>
     let button4 = <button onClick={this.handleClick} name="addrecruiter">ADD Recruiter</button>
+    let button5 = <button onClick={this.handleClick} name="logout">LOGOUT</button>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){
     //   // buttons = [button1, button2]
@@ -33,7 +41,7 @@ class Header extends Component {
     // <button onClick={this.handleClick} name="home">Home</button>
     // <button onClick={this.handleClick} name=""></button>
     // if(this.props.state.authorization !== ""){
-      buttons = [button3, button4]
+      buttons = [button3, button4, button5]
             // <button onClick={this.handleClick} name="home">Home</button>
     // }
     ////////////////////////////////////////////////////////////////////////////return function

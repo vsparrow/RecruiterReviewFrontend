@@ -54,7 +54,7 @@ class FirstPage extends Component {
     else {display = <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>}
     return(
       <div className="FirstPage">
-      <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId}/>
+      <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId} setLogut={this.props.setLogut}/>
 
         WELCOME
         {display}

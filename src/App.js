@@ -23,15 +23,19 @@ class App extends Component {
     this.setState({login: value})
   }
 
+  setLogut = ()=>{ //true or false
+    this.setState({login: true, authorization: "", user_id: null})
+  }
+
   render() {
     // console.log("APP");
-    console.log(this.state);
+    // console.log(this.state);
     // let stateProps = {...this.state, ...{setCurrentPage: this.setCurrentPage}}
     // let stateProps = {...this.state, ...{this.setCurrentPage}}
     // console.log(stateProps);
     return (
       <div className="App">
-      { this.state.authorization ? <FirstPage state={this.state}/> : <LoginOrSignup setAuthorization={this.setAuthorization} setLogin={this.setLogin}/>}
+      { this.state.authorization ? <FirstPage state={this.state} setLogut={this.setLogut}/> : <LoginOrSignup setAuthorization={this.setAuthorization} setLogin={this.setLogin}/>}
       </div>
     );
   }

@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 
 class AddReview extends Component {
-  state={recommended: false, interview: false, job: false, review: ""}
+  state={recommended: false, interview: false, job: false, review: "",
+    rating1: false,
+    rating2: false,
+    rating3: false,
+    rating4: false,
+    rating5: false
+  }
 
   handleInputChange = (event)=>{
     const target = event.target;
@@ -17,6 +23,32 @@ class AddReview extends Component {
     }
     else
     {this.setState({ [name]: value    })}
+  }
+
+  handleRating = (event)=>{
+    // console.log(event.target.value);
+    console.log(event.target.name); //rating4
+    // console.log(event.target.checked);
+    // console.log(this.state);
+    switch (event.target.name) {
+      case "rating5":
+        this.setState({rating1: true, rating2: true, rating3: true, rating4: true, rating5: true})
+        break;
+      case "rating4":
+        this.setState({rating1: true, rating2: true, rating3: true, rating4: true, rating5: false})
+        break;
+      case "rating3":
+        this.setState({rating1: true, rating2: true, rating3: true, rating4: false, rating5: false})
+        break;
+      case "rating2":
+        this.setState({rating1: true, rating2: true, rating3: false, rating4: false, rating5: false})
+        break;
+      case "rating1":
+        this.setState({rating1: true, rating2: false, rating3: false, rating4: false, rating5: false})
+        break;
+      default:
+
+    }
   }
 
   handleSubmit = (event)=>{
@@ -86,7 +118,20 @@ class AddReview extends Component {
         <br/>GOT AN INTERVIEW?<input name="interview" type="checkbox" checked={this.state.interview} onChange={this.handleInputChange} />
         <br/>GOT AN JOB?<input name="job" type="checkbox" checked={this.state.job} onChange={this.handleInputChange} />
         <br/>
+        <div>
+        <fieldset className="rating">
+            <legend>Please rate:</legend>
+            <input type="radio" id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1 === true} onClick={this.handleRating}/><label htmlFor="star1" title="Sucks big time">1 star</label>
+            <input type="radio" id="star2" name="rating2" value={this.state.rating2} checked={this.state.rating2} onClick={this.handleRating}/><label htmlFor="star2" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star3" name="rating3" value={this.state.rating3} checked={this.state.rating3} onClick={this.handleRating}/><label htmlFor="star3" title="Meh">3 stars</label>
+            <input type="radio" id="star4" name="rating4" value={this.state.rating4} checked={this.state.rating4} onClick={this.handleRating}/><label htmlFor="star4" title="Pretty good">4 stars</label>
+            <input type="radio" id="star5" name="rating5" value={this.state.rating5} checked={this.state.rating5} onClick={this.handleRating}/><label htmlFor="star5" title="Rocks!">5 stars</label>
+        </fieldset>
+        </div>
+
+        <br/>
         <textarea rows="4" cols="60" value={this.state.review} name="review" onChange={this.handleInputChange}/>
+        <br/>
         <br/>
         {this.state.reviewShort ? note : null}
         <br/>

@@ -9,7 +9,7 @@ handleChange = (event)=>{
 }
 
 handleSubmit = (event)=>{
-  // event.preventDefault() //not a submit , not a form.
+  event.preventDefault() //not a submit , not a form.
 
 
   //handle dusplicated or error checking here: ********************************
@@ -22,10 +22,13 @@ handleSubmit = (event)=>{
   // this.setState ({ firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""})
 }
 
+//called by handleSubmit
 submitRecruiter = ()=>{
-  //called by this.handleSubmit
-  // let firstname = this.state.firstname
-  // let lastname = this.state.lastname
+  //validations
+  // let submit = true;
+  // if(this.state.firstname.length < 2){submit = false}
+  // if(this.state.lastname.length < 2){submit = false}
+  //no email validation,
   // let email = this.state.email
   // let phonenumber = this.state.phonenumber
   // let company = this.state.company
@@ -84,30 +87,34 @@ render(){
     // console.log(this.state);
     console.log("this.props");
     console.log(this.props);
+    //LEAVING both website and linkedin as text, not type="url" if we make it url an error message will pop up if
+    // site not start with http:// or some uri but wont tell user either
     return(
     <div className="RecruiterNewForm">
       <h2>RecruiterNewForm</h2>
-      <label htmlFor="firstname">First Name</label>
-      <input type="text" name="firstname" value={this.state.firstname} placeholder="" onChange={this.handleChange}/>
-      <label htmlFor="lastname">Last Name</label>
-      <input type="text" name="lastname" value={this.state.lastname} placeholder="" onChange={this.handleChange}/>
-      <br/>
-      <label htmlFor="email">Email</label>
-      <input type="text" name="email" value={this.state.email} placeholder="" onChange={this.handleChange}/>
-      <label htmlFor="phonenumber">Phone Number</label>
-      <input type="text" name="phonenumber" value={this.state.phonenumber} placeholder="" onChange={this.handleChange}/>
-      <br/>
-      <label htmlFor="company">Company</label>
-      <input type="text" name="company" value={this.state.company} placeholder="" onChange={this.handleChange}/>
-      <label htmlFor="website">Website</label>
-      <input type="text" name="website" value={this.state.website} placeholder="" onChange={this.handleChange}/>
-      <br/>
-      <label htmlFor="linkedin">Linkedin</label>
-      <input type="text" name="linkedin" value={this.state.linkedin} placeholder="" onChange={this.handleChange}/>
-      <label htmlFor="location">Location</label>
-      <input type="text" name="location" value={this.state.location} placeholder="" onChange={this.handleChange}/>
-      <br/>
-      <button onClick={this.handleSubmit}>SUBMIT</button>
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="firstname">First Name</label>
+        <input type="text" name="firstname" value={this.state.firstname} placeholder="" onChange={this.handleChange} required/>
+        <label htmlFor="lastname">Last Name</label>
+        <input type="text" name="lastname" value={this.state.lastname} placeholder="" onChange={this.handleChange} required/>
+        <br/>
+        <label htmlFor="email">Email</label>
+        <input type="text" name="email" value={this.state.email} placeholder="" onChange={this.handleChange}   required/>
+        <label htmlFor="phonenumber">Phone Number</label>
+        <input type="tel" name="phonenumber" value={this.state.phonenumber} placeholder="" onChange={this.handleChange}/>
+        <br/>
+        <label htmlFor="company">Company</label>
+        <input type="text" name="company" value={this.state.company} placeholder="" onChange={this.handleChange}/>
+        <label htmlFor="website">Website</label>
+        <input type="text" name="website" value={this.state.website} placeholder="" onChange={this.handleChange}/>
+        <br/>
+        <label htmlFor="linkedin">Linkedin</label>
+        <input type="text" name="linkedin" value={this.state.linkedin} placeholder="" onChange={this.handleChange}/>
+        <label htmlFor="location">Location</label>
+        <input type="text" name="location" value={this.state.location} placeholder="" onChange={this.handleChange} />
+        <br/>
+        <input type="submit"/>
+      </form>
     </div>
   )
 }

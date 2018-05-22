@@ -17,23 +17,44 @@ handleSubmit = (event)=>{
   //
 
   //if checks ok post fetch
-
+  this.submitRecruiter()
   //not needed? since componenet will be removed after submittal
-  this.setStat ({ firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""})
+  this.setState ({ firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""})
 }
 
 submitRecruiter = ()=>{
   //called by this.handleSubmit
-  let firstname = this.state.firstname
-  let lastname = this.state.lastname
-  let email = this.state.email
-  let phonenumber = this.state.phonenumber
-  let company = this.state.company
-  let website = this.state.website
-  let linkedin = this.state.linkedin
-  let location = this.state.location
+  // let firstname = this.state.firstname
+  // let lastname = this.state.lastname
+  // let email = this.state.email
+  // let phonenumber = this.state.phonenumber
+  // let company = this.state.company
+  // let website = this.state.website
+  // let linkedin = this.state.linkedin
+  // let location = this.state.location
+  let url = this.props.state.url + "/recruiters"
+  fetch(url, {
+    method: 'post',
+    headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization},
+    body: JSON.stringify({
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email,
+      phonenumber: this.state.phonenumber,
+      website: this.state.website,
+      company: this.state.company,
+      linkedin: this.state.linkedin,
+      location: this.state.location,
+      user_id: this.props.state.user_id
+    })
+  })//fetch
+  .then(res=>res.json())
+  // .then(json=>console.log(json))
+  .then(json=>this.handleJSON(json))
+}//submitRecruiter
 
-
+handleJSON = (json)=>{
+  console.log(json);
 }
 
 render(){

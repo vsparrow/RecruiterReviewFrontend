@@ -6,7 +6,8 @@ class AddReview extends Component {
     rating2: false,
     rating3: false,
     rating4: false,
-    rating5: false
+    rating5: false,
+    rating: null
   }
 
   handleInputChange = (event)=>{
@@ -26,25 +27,21 @@ class AddReview extends Component {
   }
 
   handleRating = (event)=>{
-    // console.log(event.target.value);
-    console.log(event.target.name); //rating4
-    // console.log(event.target.checked);
-    // console.log(this.state);
     switch (event.target.name) {
       case "rating5":
-        this.setState({rating1: true, rating2: true, rating3: true, rating4: true, rating5: true})
+        this.setState({rating1: true, rating2: true, rating3: true, rating4: true, rating5: true, rating: 5})
         break;
       case "rating4":
-        this.setState({rating1: true, rating2: true, rating3: true, rating4: true, rating5: false})
+        this.setState({rating1: true, rating2: true, rating3: true, rating4: true, rating5: false, rating: 4})
         break;
       case "rating3":
-        this.setState({rating1: true, rating2: true, rating3: true, rating4: false, rating5: false})
+        this.setState({rating1: true, rating2: true, rating3: true, rating4: false, rating5: false, rating: 3})
         break;
       case "rating2":
-        this.setState({rating1: true, rating2: true, rating3: false, rating4: false, rating5: false})
+        this.setState({rating1: true, rating2: true, rating3: false, rating4: false, rating5: false, rating: 2})
         break;
       case "rating1":
-        this.setState({rating1: true, rating2: false, rating3: false, rating4: false, rating5: false})
+        this.setState({rating1: true, rating2: false, rating3: false, rating4: false, rating5: false, rating: 1})
         break;
       default:
 
@@ -74,7 +71,7 @@ class AddReview extends Component {
         got_interview: this.state.interview,
         got_job: this.state.job,
         recommended: this.state.recommended,
-
+        rating: this.state.rating
       })
     })//fetch
     .then(res=>res.json())
@@ -83,8 +80,8 @@ class AddReview extends Component {
   }
 
   handleJSON = (json)=>{
-    console.log(json);
-    console.log(this.state);
+    // console.log(json);
+    // console.log(this.state);
     if(json["POSTED REVIEW"]){
       //submit was successful
       //do some action
@@ -121,7 +118,7 @@ class AddReview extends Component {
         <div>
         <fieldset className="rating">
             <legend>Please rate:</legend>
-            <input type="radio" id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1 === true} onClick={this.handleRating}/><label htmlFor="star1" title="Sucks big time">1 star</label>
+            <input type="radio" id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1} onClick={this.handleRating}/><label htmlFor="star1" title="Sucks big time">1 star</label>
             <input type="radio" id="star2" name="rating2" value={this.state.rating2} checked={this.state.rating2} onClick={this.handleRating}/><label htmlFor="star2" title="Kinda bad">2 stars</label>
             <input type="radio" id="star3" name="rating3" value={this.state.rating3} checked={this.state.rating3} onClick={this.handleRating}/><label htmlFor="star3" title="Meh">3 stars</label>
             <input type="radio" id="star4" name="rating4" value={this.state.rating4} checked={this.state.rating4} onClick={this.handleRating}/><label htmlFor="star4" title="Pretty good">4 stars</label>

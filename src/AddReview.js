@@ -65,7 +65,7 @@ class AddReview extends Component {
       method: 'post',
       headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization},
       body: JSON.stringify({
-        user_id: 1, //change this
+        user_id: this.props.state.user_id, 
         recruiter_id: this.props.state.selectedRecruiterId,
         review: this.state.review,
         got_interview: this.state.interview,

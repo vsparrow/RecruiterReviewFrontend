@@ -11,6 +11,9 @@ class Header extends Component {
         // this.props.setSomeState("selectedRecruiterId", null)
         this.props.selectedRecruiterId(null)
         break;
+      case "addrecruiter":
+        this.props.selectedRecruiterId("new")
+        break;
       default:
 
     }
@@ -21,6 +24,7 @@ class Header extends Component {
     // let button1 = <button onClick={this.handleClick} name="login">LOGIN</button>
     // let button2 = <button onClick={this.handleClick} name="signup">SIGNUP</button>
     let button3 = <button onClick={this.handleClick} name="home">HOME</button>
+    let button4 = <button onClick={this.handleClick} name="addrecruiter">ADD Recruiter</button>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){
     //   // buttons = [button1, button2]
@@ -29,7 +33,7 @@ class Header extends Component {
     // <button onClick={this.handleClick} name="home">Home</button>
     // <button onClick={this.handleClick} name=""></button>
     // if(this.props.state.authorization !== ""){
-      buttons = [button3]
+      buttons = [button3, button4]
             // <button onClick={this.handleClick} name="home">Home</button>
     // }
     ////////////////////////////////////////////////////////////////////////////return function

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FirstPageDisplayRecruitersJunction from './FirstPageDisplayRecruitersJunction'
 // import DisplayRecruiters from './DisplayRecruiters'
 // import DisplayRecruiterFull from './DisplayRecruiterFull'
+import RecruiterNewForm from './RecruiterNewForm'
 import Header from "./Header"
 
 class FirstPage extends Component {
@@ -45,13 +46,15 @@ class FirstPage extends Component {
   //////////////////////////////////////////////////////////////////////////////
   render(){
     let sendState = {...this.state,...this.props.state}
-
+    let display = null;
+    if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm />}
+    else {display = <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>}
     return(
       <div className="FirstPage">
       <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId}/>
 
         WELCOME
-        <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>
+        {display}
       </div>
     )
   }

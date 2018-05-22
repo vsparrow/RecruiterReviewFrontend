@@ -43,8 +43,8 @@ class FirstPage extends Component {
     this.setState({key: value})
   }
 
-  addToRecruiters = (value)=>{
-    this.setState({recruiters: value})
+  addToRecruiters = (value, newrecid)=>{
+    this.setState({recruiters: value,selectedRecruiterId: newrecid})
   }
   //////////////////////////////////////////////////////////////////////////////
   render(){

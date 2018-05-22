@@ -72,7 +72,7 @@ handleJSON = (json)=>{
     }
     // let recruiters = [...this.props.state.recruiters, recruiter_obj]
     // console.log(recruiters);
-    this.props.addToRecruiters([...this.props.state.recruiters, recruiter_obj] )
+    this.props.addToRecruiters([...this.props.state.recruiters, recruiter_obj], json.recruiter_id )
       // setSomeState = (key,value)=>{
       //   this.setState({key: value})
       // }

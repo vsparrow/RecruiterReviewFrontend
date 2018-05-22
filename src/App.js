@@ -11,11 +11,12 @@ class App extends Component {
     authorization: "",
     url: "http://127.0.0.1:3000/",
     login: true,
-    currentPage: null
+    currentPage: null,
+    user_id: null
   }
 
-  setAuthorization = (token)=>{
-    this.setState({authorization: token})
+  setAuthorization = (json)=>{
+    this.setState({authorization: json.auth_token, user_id: json.user_id})
   }
 
   setLogin = (value)=>{ //true or false
@@ -24,7 +25,7 @@ class App extends Component {
 
   render() {
     // console.log("APP");
-    // console.log(this.state);
+    console.log(this.state);
     // let stateProps = {...this.state, ...{setCurrentPage: this.setCurrentPage}}
     // let stateProps = {...this.state, ...{this.setCurrentPage}}
     // console.log(stateProps);

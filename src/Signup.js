@@ -74,7 +74,7 @@ class Signup extends Component {
     console.log("handleAuthenticate");
     console.log(json.auth_token);
     //if successful pass token backup to app
-    this.props.setAuthorization(json.auth_token)
+    this.props.setAuthorization(json)
   }
   //////////////////////////////////////////////////////////// above same as Login.js, refactor this
 

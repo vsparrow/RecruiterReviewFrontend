@@ -19,7 +19,7 @@ handleSubmit = (event)=>{
   //if checks ok post fetch
   this.submitRecruiter()
   //not needed? since componenet will be removed after submittal
-  this.setState ({ firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""})
+  // this.setState ({ firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""})
 }
 
 submitRecruiter = ()=>{
@@ -45,7 +45,7 @@ submitRecruiter = ()=>{
       company: this.state.company,
       linkedin: this.state.linkedin,
       location: this.state.location,
-      user_id: this.props.state.user_id
+      user_id: this.props.state.user_id //should be able to remove this
     })
   })//fetch
   .then(res=>res.json())
@@ -54,7 +54,30 @@ submitRecruiter = ()=>{
 }//submitRecruiter
 
 handleJSON = (json)=>{
-  console.log(json);
+  // console.log(json);
+  // let recruiter_id = json.recruiter_id
+  if(json.recruiter_id)//means successful creation
+  {
+    //create a new recruiter object and push it into top state.recruiters
+    let recruiter_obj = {
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email,
+      phonenumber: this.state.phonenumber,
+      website: this.state.website,
+      company: this.state.company,
+      linkedin: this.state.linkedin,
+      location: this.state.location,
+      id: json.recruiter_id
+    }
+    // let recruiters = [...this.props.state.recruiters, recruiter_obj]
+    // console.log(recruiters);
+    this.props.addToRecruiters([...this.props.state.recruiters, recruiter_obj] )
+      // setSomeState = (key,value)=>{
+      //   this.setState({key: value})
+      // }
+    //set top state.selectedRecruiterId to new recruiter_id
+  }//if
 }
 
 render(){

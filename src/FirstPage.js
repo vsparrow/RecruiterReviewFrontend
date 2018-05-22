@@ -43,11 +43,14 @@ class FirstPage extends Component {
     this.setState({key: value})
   }
 
+  addToRecruiters = (value)=>{
+    this.setState({recruiters: value})
+  }
   //////////////////////////////////////////////////////////////////////////////
   render(){
     let sendState = {...this.state,...this.props.state}
     let display = null;
-    if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm state={sendState}/>}
+    if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm state={sendState} addToRecruiters={this.addToRecruiters}/>}
     else {display = <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>}
     return(
       <div className="FirstPage">

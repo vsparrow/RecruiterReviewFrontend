@@ -55,6 +55,15 @@
 .main {
     margin-top: 75px; /* Add a top margin to avoid content overlay */
 }
+
+/* Right-aligned section inside the top navigation */
+.navbar-right {
+  float: right;
+}
+.navbar-left {
+  float: left;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

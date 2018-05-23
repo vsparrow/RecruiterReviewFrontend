@@ -32,9 +32,11 @@ class Header extends Component {
     // let button2 = <button onClick={this.handleClick} name="signup">SIGNUP</button>
     //href example for navbar:   <a href="#home">Home</a>
     // let button3 = <button onClick={this.handleClick} name="home">HOME</button>
-    let button3 = <a href="#" onClick={this.handleClick} name="home">HOME</a>
-    let button4 = <a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a>
-    let button5 = <a href="#" onClick={this.handleClick} name="logout">LOGOUT</a>
+    // let button3 = <a href="#" onClick={this.handleClick} name="home">HOME</a>
+    // let button4 = <a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a>
+    let topleft = <div className="navbar-left"><a href="#" onClick={this.handleClick} name="home">HOME</a><a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a></div>
+    // let button5 = <a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a>
+    let topright =   <div className="navbar-right" style={{textAlign: "right"}}><a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a></div>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){
     //   // buttons = [button1, button2]
@@ -43,15 +45,14 @@ class Header extends Component {
     // <button onClick={this.handleClick} name="home">Home</button>
     // <button onClick={this.handleClick} name=""></button>
     // if(this.props.state.authorization !== ""){
-      buttons = [button3, button4, button5]
+      // buttons = [button3, button4, button5]
+      // buttons = [button3, button4]
             // <button onClick={this.handleClick} name="home">Home</button>
     // }
     ////////////////////////////////////////////////////////////////////////////return function
     return (
       <div className="Header navbar">
-        <div style={{textAlign: "left"}}>
-          {buttons}
-        </div>
+          {topleft}{topright}
       </div>
     );
   }

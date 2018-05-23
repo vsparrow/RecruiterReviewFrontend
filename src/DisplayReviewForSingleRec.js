@@ -1,3 +1,4 @@
+// called by DisplayReviewsForSingleRec
 import React, { Component } from 'react';
 // import DisplayReviewForSingleRecFullContent from './DisplayReviewForSingleRecFullContent'
 // import Modal from './DisplayReviewForSingleRecFullContent'
@@ -39,7 +40,7 @@ class DisplayReviewForSingleRec extends Component {
     else {      linkStyle = {}    }
 
     return(
-      <div className="DisplayReviewForSingleRec" style={linkStyle} onMouseEnter={this.toggleHover}  onMouseLeave={this.toggleHover}>
+      <div className="DisplayReviewForSingleRec wrapper-relatives" style={linkStyle} onMouseEnter={this.toggleHover}  onMouseLeave={this.toggleHover}>
         {this.state.show ? <h3>{reviewFull}</h3> : <h3>{review}</h3>}
         <span>Rating: {stars}</span><br/>
         {this.state.show ? <button onClick={this.handleClick}>Less..</button> : <button onClick={this.handleClick}>More..</button>}

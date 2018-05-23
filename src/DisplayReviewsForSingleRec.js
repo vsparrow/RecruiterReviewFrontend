@@ -1,3 +1,4 @@
+// called by DisplayRecruiterFull
 import React, { Component } from 'react';
 import DisplayReviewForSingleRec from './DisplayReviewForSingleRec'
 class DisplayReviewsForSingleRec extends Component {
@@ -22,7 +23,6 @@ class DisplayReviewsForSingleRec extends Component {
     })
     return(
       <div className="DisplayReviewsForSingleRec" >
-        DisplayReviewsForSingleRec
         {reviews}
       </div>
     )

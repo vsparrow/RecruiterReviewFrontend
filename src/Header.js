@@ -30,9 +30,11 @@ class Header extends Component {
     let buttons = "";
     // let button1 = <button onClick={this.handleClick} name="login">LOGIN</button>
     // let button2 = <button onClick={this.handleClick} name="signup">SIGNUP</button>
-    let button3 = <button onClick={this.handleClick} name="home">HOME</button>
-    let button4 = <button onClick={this.handleClick} name="addrecruiter">ADD Recruiter</button>
-    let button5 = <button onClick={this.handleClick} name="logout">LOGOUT</button>
+    //href example for navbar:   <a href="#home">Home</a>
+    // let button3 = <button onClick={this.handleClick} name="home">HOME</button>
+    let button3 = <a href="#" onClick={this.handleClick} name="home">HOME</a>
+    let button4 = <a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a>
+    let button5 = <a href="#" onClick={this.handleClick} name="logout">LOGOUT</a>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){
     //   // buttons = [button1, button2]
@@ -46,7 +48,7 @@ class Header extends Component {
     // }
     ////////////////////////////////////////////////////////////////////////////return function
     return (
-      <div className="Header">
+      <div className="Header navbar">
         <div style={{textAlign: "left"}}>
           {buttons}
         </div>

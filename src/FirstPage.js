@@ -1,3 +1,4 @@
+// #called by App.js
 import React, { Component } from 'react';
 import FirstPageDisplayRecruitersJunction from './FirstPageDisplayRecruitersJunction'
 // import DisplayRecruiters from './DisplayRecruiters'
@@ -55,9 +56,10 @@ class FirstPage extends Component {
     return(
       <div className="FirstPage">
       <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId} setLogut={this.props.setLogut}/>
-
-        WELCOME
-        {display}
+        <div className="main">
+          WELCOME
+          {display}
+        </div>
       </div>
     )
   }

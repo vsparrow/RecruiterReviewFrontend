@@ -33,7 +33,7 @@
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    z-index: 2  
+    z-index: 2
 }
 
 /* Links inside the navbar */
@@ -109,7 +109,14 @@
   border-top-right-radius: 0;
 }
 
-img {
+.img-recruiters {
+  /* display: inline-block; */
+  float: left;
+  max-height: 10%;
+  max-width: 10%;
+  padding: 1.2%;
+}
+.img-recruiter {
   /* display: inline-block; */
   float: left;
   max-height: 50%;

@@ -55,37 +55,26 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
-
-              <form onClick={this.handleSubmit}>
-                <input name="username" placeholder="username" onChange={this.handleChange} value={this.state.username}/>
-                <br/>
-                <input type="password" name="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
-                <br/>
-                <input type="submit" value="LOGIN" className="btn btn-primary" />
-              </form>
-            <p>
-              <button onClick={this.toggleToSignup}>Signup Here</button>
-            </p>
             <div className="wrapper" onSubmit={this.handleSubmit}>
               <form className="form-signin">
                 <h2 className="form-signin-heading">Please login</h2>
                 <input type="text" className="form-control" name="username" placeholder="Email Address" required="" autofocus="" onChange={this.handleChange} value={this.state.username} />
                 <input type="password" className="form-control" name="password" placeholder="Password" required="" onChange={this.handleChange} value={this.state.password}/>
-                <label className="checkbox">
-                  <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
-                </label>
                 <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
               </form>
               {this.state.errorOnAuthenticate ? <p style={{color: "red"}}>ERROR SUBMITING EMAIL OR PASSSWORD</p> : null}
-
             </div>
+            <a  onClick={this.toggleToSignup}>No Login? Click here to Signup</a>
       </div>
     )
   }//render
 }//class
 export default Login
 
+// USE THIS FOR THE COOKIES OPTION
+// <label className="checkbox">
+//   <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
+// </label>
 
 
 // modal version below:

@@ -58,7 +58,7 @@ class Login extends Component {
             <div className="wrapper" onSubmit={this.handleSubmit}>
               <form className="form-signin">
                 <h2 className="form-signin-heading">Please login</h2>
-                <input type="text" className="form-control" name="username" placeholder="Email Address" required="" autofocus="" onChange={this.handleChange} value={this.state.username} />
+                <input type="text" className="form-control" name="username" placeholder="Email Address" required="" autoFocus="" onChange={this.handleChange} value={this.state.username} />
                 <input type="password" className="form-control" name="password" placeholder="Password" required="" onChange={this.handleChange} value={this.state.password}/>
                 <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
               </form>

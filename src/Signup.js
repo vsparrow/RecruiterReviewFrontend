@@ -83,18 +83,20 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <h1>Signup</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="firstname" placeholder="firstname" onChange={this.handleChange} value={this.state.firstname}/>
-          <input type="text" name="lastname" placeholder="lastname" onChange={this.handleChange} value={this.state.lastname}/>
-          <input type="text" name="email" placeholder="email" onChange={this.handleChange} value={this.state.email}/>
-          <input type="password" name="password" placeholder="Password" onChange={this.handleChange} value={this.state.password}/>
-          <input type="submit"/ >
-        </form>
-        <p>
-          <button onClick={this.toggleToLogin}>Login here</button>
-        </p>
+
+        <div className="wrapper">
+          <form className="form-signin" onSubmit={this.handleSubmit}>
+            <h2 className="form-signin-heading">SIGNUP</h2>
+            <input type="text" className="form-control" name="firstname" placeholder="Firstname" onChange={this.handleChange} value={this.state.firstname} required="" autoFocus="" />
+            <input type="text" className="form-control" name="lastname" placeholder="Lastname" onChange={this.handleChange} value={this.state.lastname} required="" autoFocus="" />
+            <input type="text" className="form-control" name="email" placeholder="Email" onChange={this.handleChange} value={this.state.email} required="" autoFocus="" />
+            <input type="password" className="form-control" name="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} required=""/>
+            <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          </form>
+        </div>
         {this.state.error ? <span style={{color: "red"}}>ERROR PLEASE CHECK INPUT</span> : null}
+        <a  onClick={this.toggleToLogin}>Already Have A Login? Click here</a>
+
       </div>
     )
   }//render

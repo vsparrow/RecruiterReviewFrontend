@@ -1,4 +1,4 @@
-
+// called by FirstPage
 import React, { Component } from 'react';
 import DisplayRecruiters from './DisplayRecruiters'
 import DisplayRecruiterFull from './DisplayRecruiterFull'

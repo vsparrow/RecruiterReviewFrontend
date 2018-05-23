@@ -24,7 +24,7 @@ class DisplayReviewForSingleRec extends Component {
     let reviewFull = null //<--------added
     if(this.props.review.review){
       review=this.props.review.review.slice(0,30)
-      review += "..."
+      if(this.props.review.review.length > 30){review += "..."}
       /////////////////////////////////////////////////
       reviewFull=this.props.review.review
 

@@ -20,7 +20,7 @@ class DisplayReviewForSingleRec extends Component {
 
   render(){
     let review = null;
-    let stars = null;
+    let stars = [];
     let reviewFull = null //<--------added
     if(this.props.review.review){
       review=this.props.review.review.slice(0,30)
@@ -32,7 +32,15 @@ class DisplayReviewForSingleRec extends Component {
     }//if this.props.review
 
 
-    stars = "*".repeat(this.props.review.rating)
+    // let newstars = "*".repeat(this.props.review.rating)
+    // let newstars = <i class="fas fa-star"></i>.repeat(this.props.review.rating) //this wont work
+    if(this.props.review.rating){
+      // stars = <i class="fas fa-star"></i>
+      for(let i=0;i<this.props.review.rating;i++){
+        // stars += <i class="fas fa-star"></i>
+        stars.push(<i class="fas fa-star"></i>)
+      }
+    }
     // }
     ///////////////////////////////////////////////////////
     let linkStyle={};
@@ -43,7 +51,7 @@ class DisplayReviewForSingleRec extends Component {
     return(
       <div className="DisplayReviewForSingleRec wrapper-relatives" style={linkStyle} onMouseEnter={this.toggleHover}  onMouseLeave={this.toggleHover}>
         {this.state.show ? <h3>{reviewFull}</h3> : <h3>{review}</h3>}
-        <span>Rating: {stars}</span><br/>
+        <span>{stars}</span><br/>
         {this.state.show ? <button className="btn btn-review btn-warning btn-sm" onClick={this.handleClick}>Less..</button> : <button className="btn btn-review btn-sm" onClick={this.handleClick}>More..</button>}
       </div>
     )

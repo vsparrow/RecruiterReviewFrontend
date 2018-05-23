@@ -14,15 +14,14 @@ class DisplayRecruiterFull extends Component {
   }
 
   render(){
-
     let recruiter=this.props.state.recruiters.find((r)=>{ return r.id === this.props.state.selectedRecruiterId})
     let  sendState = {...this.state,...this.props.state}
     return(
       <div className="DisplayRecruiterFull " >
-        DisplayRecruiterFull
         <div className="wrapper-relatives">
         <img className="img-recruiter" src={ require('./placeholder.png') }/>
         <h1 style={{fontWeight: 800}}>{recruiter.firstname} {recruiter.lastname}</h1>
+        <h2>{recruiter.company}</h2>
         <h3>{recruiter.email }</h3>
         <h3>{recruiter.phonenumber}</h3>
         <h3>{recruiter.linkedin}</h3>

@@ -43,7 +43,7 @@ class DisplayReviewForSingleRec extends Component {
       <div className="DisplayReviewForSingleRec wrapper-relatives" style={linkStyle} onMouseEnter={this.toggleHover}  onMouseLeave={this.toggleHover}>
         {this.state.show ? <h3>{reviewFull}</h3> : <h3>{review}</h3>}
         <span>Rating: {stars}</span><br/>
-        {this.state.show ? <button onClick={this.handleClick}>Less..</button> : <button onClick={this.handleClick}>More..</button>}
+        {this.state.show ? <button className="btn btn-review btn-warning btn-sm" onClick={this.handleClick}>Less..</button> : <button className="btn btn-review btn-sm" onClick={this.handleClick}>More..</button>}
       </div>
     )
   }

@@ -36,7 +36,8 @@ class DisplayReviewForSingleRec extends Component {
     // }
     ///////////////////////////////////////////////////////
     let linkStyle={};
-    if (this.state.hover) { linkStyle = {backgroundColor: 'blue'}    }
+    // if (this.state.hover) { linkStyle = {backgroundColor: 'blue'}    }
+    if (this.state.hover) { linkStyle = {borderStyle: 'solid'}    }
     else {      linkStyle = {}    }
 
     return(

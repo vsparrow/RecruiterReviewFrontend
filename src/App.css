@@ -148,7 +148,9 @@
 /*  for new recruiter */
 #newrecform {
   color: white;
-  background-color: #009EDF;
+  /* color: #fff; */
+  /* background-color: #009EDF; */
+  background-color: #ddd;
   border-radius: 5px;
   width: 400px;
   padding: 40px;

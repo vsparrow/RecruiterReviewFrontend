@@ -149,7 +149,7 @@ render(){
                <input type="text" name="location" value={this.state.location } placeholder="Enter location" onChange={this.handleChange} />
             </div>
          </div>
-         <button type="submit" className="btn btn-default">Register</button>
+         <button type="submit" className="btn btn-default">Add Recruiter</button>
        </form>
     </div>
   )

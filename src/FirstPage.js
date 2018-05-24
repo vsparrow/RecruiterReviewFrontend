@@ -57,7 +57,6 @@ class FirstPage extends Component {
       <div className="FirstPage">
       <Header state={this.sendState} setSomeState={this.setSomeState} selectedRecruiterId={this.selectedRecruiterId} setLogut={this.props.setLogut}/>
         <div className="main">
-          WELCOME
           {display}
         </div>
       </div>

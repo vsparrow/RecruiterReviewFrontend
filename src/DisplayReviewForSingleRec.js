@@ -38,7 +38,7 @@ class DisplayReviewForSingleRec extends Component {
       // stars = <i class="fas fa-star"></i>
       for(let i=0;i<this.props.review.rating;i++){
         // stars += <i class="fas fa-star"></i>
-        stars.push(<i class="fas fa-star"></i>)
+        stars.push(<i key={i} className="fas fa-star"></i>)
       }
     }
     // }

@@ -85,36 +85,72 @@ handleJSON = (json)=>{
 
 render(){
     // console.log(this.state);
-    console.log("this.props");
-    console.log(this.props);
+    // console.log("this.props");
+    // console.log(this.props);
     //LEAVING both website and linkedin as text, not type="url" if we make it url an error message will pop up if
     // site not start with http:// or some uri but wont tell user either
     return(
     <div className="RecruiterNewForm">
-      <h2>RecruiterNewForm</h2>
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="firstname">First Name</label>
-        <input type="text" name="firstname" value={this.state.firstname} placeholder="" onChange={this.handleChange} required/>
-        <label htmlFor="lastname">Last Name</label>
-        <input type="text" name="lastname" value={this.state.lastname} placeholder="" onChange={this.handleChange} required/>
-        <br/>
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" value={this.state.email} placeholder="" onChange={this.handleChange}   required/>
-        <label htmlFor="phonenumber">Phone Number</label>
-        <input type="tel" name="phonenumber" value={this.state.phonenumber} placeholder="" onChange={this.handleChange}/>
-        <br/>
-        <label htmlFor="company">Company</label>
-        <input type="text" name="company" value={this.state.company} placeholder="" onChange={this.handleChange}/>
-        <label htmlFor="website">Website</label>
-        <input type="text" name="website" value={this.state.website} placeholder="" onChange={this.handleChange}/>
-        <br/>
-        <label htmlFor="linkedin">Linkedin</label>
-        <input type="text" name="linkedin" value={this.state.linkedin} placeholder="" onChange={this.handleChange}/>
-        <label htmlFor="location">Location</label>
-        <input type="text" name="location" value={this.state.location} placeholder="" onChange={this.handleChange} />
-        <br/>
-        <input type="submit"/>
-      </form>
+      <form id="newrecform" onSubmit={this.handleSubmit}>
+        <h2>Add A New Recruiter</h2>
+         <div className="form-group">
+            <label  htmlFor="firstname">First Name</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="firstname" value={this.state.firstname} placeholder="Enter first name" onChange={this.handleChange} required/>
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="lastname">Last Name</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="lastname" value={this.state.lastname } placeholder="Enter last name" onChange={this.handleChange} required/>
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="email">Email Address</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="email" value={this.state.email } placeholder="Enter email address" onChange={this.handleChange} required/>
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="phonenumber">Phone Number</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="phonenumber" value={this.state.phonenumber } placeholder="Enter phone number" onChange={this.handleChange} />
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="company">Company</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="company" value={this.state.company } placeholder="Enter company name" onChange={this.handleChange} />
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="website">Website Address</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="website" value={this.state.website } placeholder="Enter website address" onChange={this.handleChange} />
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="linkedin">Linkedin Address</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="linkedin" value={this.state.linkedin } placeholder="Enter linkedin address" onChange={this.handleChange} />
+            </div>
+         </div>
+         <div className="form-group">
+            <label  htmlFor="location">Location</label>
+            <br />
+            <div className="input-group">
+               <input type="text" name="location" value={this.state.location } placeholder="Enter location" onChange={this.handleChange} />
+            </div>
+         </div>
+         <button type="submit" className="btn btn-default">Register</button>
+       </form>
     </div>
   )
 }
@@ -125,3 +161,30 @@ export default RecruiterNewForm
 //  website: string, company: string, linkedin: string, location:
 // <label htmlFor=""></label>
 // <input type="text" name="" value="" placeholder=""/>
+
+//
+// old form
+// <h2>RecruiterNewForm</h2>
+// <form onSubmit={this.handleSubmit}>
+//   <label htmlFor="firstname">First Name</label>
+//   <input type="text" name="firstname" value={this.state.firstname} placeholder="" onChange={this.handleChange} required/>
+//   <label htmlFor="lastname">Last Name</label>
+//   <input type="text" name="lastname" value={this.state.lastname} placeholder="" onChange={this.handleChange} required/>
+//   <br/>
+//   <label htmlFor="email">Email</label>
+//   <input type="text" name="email" value={this.state.email} placeholder="" onChange={this.handleChange}   required/>
+//   <label htmlFor="phonenumber">Phone Number</label>
+//   <input type="tel" name="phonenumber" value={this.state.phonenumber} placeholder="" onChange={this.handleChange}/>
+//   <br/>
+//   <label htmlFor="company">Company</label>
+//   <input type="text" name="company" value={this.state.company} placeholder="" onChange={this.handleChange}/>
+//   <label htmlFor="website">Website</label>
+//   <input type="text" name="website" value={this.state.website} placeholder="" onChange={this.handleChange}/>
+//   <br/>
+//   <label htmlFor="linkedin">Linkedin</label>
+//   <input type="text" name="linkedin" value={this.state.linkedin} placeholder="" onChange={this.handleChange}/>
+//   <label htmlFor="location">Location</label>
+//   <input type="text" name="location" value={this.state.location} placeholder="" onChange={this.handleChange} />
+//   <br/>
+//   <input type="submit"/>
+// </form>

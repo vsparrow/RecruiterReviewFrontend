@@ -144,7 +144,61 @@
 .fa-star {
   color: #FAFAD2;
 }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+/*  for new recruiter */
+#newrecform {
+  color: white;
+  background-color: #009EDF;
+  border-radius: 5px;
+  width: 400px;
+  padding: 40px;
+  margin: 20px auto;
+  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+}
+#newrecform p {
+  font-size: 0.9em;
+}
+#newrecform button {
+  width: 100%;
+  text-align: center;
+  color: grey;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+#newrecform .form-group {
+  margin: 15px auto;
+}
+#newrecform .form-group label {
+  /* text-align: none; */
+    /* text-align:left; */
+       /* text-align:left !important;  */
+  font-weight: bold;
+  font-size: 0.9em;
+  float: left;
+}
+
+
+#newrecform .form-group .input-group {
+  border-radius: 5px;
+  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.35);
+}
+#newrecform .form-group .input-group  {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+#newrecform .form-group .input-group input {
+  padding-left: 10px;
+}
+#newrecform .form-group .input-group i {
+  color: #009EDF;
+}
+#newrecform .form-group input {
+  padding: 3px;
+  width: 100%;
+  border: none;
+  border-radius: 0 5px 5px 0;
 }

@@ -52,9 +52,9 @@ class DisplayReviewForSingleRec extends Component {
     //<i class="fas fa-user-tie"></i>         got_interview
     // <i class="fas fa-briefcase"></i>       got_job
     let stats = []
-    let recommended = <span key={"stats1"}>Recommended: <i className="far fa-thumbs-up"></i> </span>
-    let got_interview = <span key={"stats2"}>Got an Interview: <i className="fas fa-user-tie"></i></span>
-    let got_job = <span key={"stats3"}>Got a Job: <i className="fas fa-briefcase"></i></span>
+    let recommended = <span style={{marginRight: "1em"}} key={"stats1"}>Recommended: <i className="far fa-thumbs-up"></i> </span>
+    let got_interview = <span style={{marginRight: "1em"}} key={"stats2"}>Got an Interview: <i className="fas fa-user-tie"></i></span>
+    let got_job = <span style={{marginRight: "1em"}} key={"stats3"}>Got a Job: <i className="fas fa-briefcase"></i></span>
     if(this.props.review.recommended){stats.push(recommended)}
     if(this.props.review.got_interview){stats.push(got_interview)}
     if(this.props.review.got_job){stats.push(got_job)}
@@ -62,8 +62,8 @@ class DisplayReviewForSingleRec extends Component {
     return(
       <div className="DisplayReviewForSingleRec wrapper-relatives" style={linkStyle} onMouseEnter={this.toggleHover}  onMouseLeave={this.toggleHover}>
         {this.state.show ? <h3>{reviewFull}</h3> : <h3>{review}</h3>}
-        <span>{stars}</span><br/>
-        {this.state.show ? <div>{stats}</div> : null }
+        {this.state.show ? <span style={{fontSize: "2em"}}>{stars}</span> : <span >{stars}</span>}<br/> 
+        {this.state.show ? <div style={{fontSize: "2em"}}>{stats}</div> : null }
         {this.state.show ? <button className="btn btn-review btn-warning btn-sm" onClick={this.handleClick}>Less..</button> : <button className="btn btn-review btn-sm" onClick={this.handleClick}>More..</button>}
       </div>
     )

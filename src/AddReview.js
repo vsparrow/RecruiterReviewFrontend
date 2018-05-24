@@ -127,11 +127,11 @@ class AddReview extends Component {
             <div>
               <fieldset className="rating">
                   <legend>Please rate:</legend>
-                  <input type="radio" id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1} onClick={this.handleRating}/><label htmlFor="star1" title="Sucks big time">1</label>
-                  <input type="radio" id="star2" name="rating2" value={this.state.rating2} checked={this.state.rating2} onClick={this.handleRating}/><label htmlFor="star2" title="Kinda bad">2</label>
-                  <input type="radio" id="star3" name="rating3" value={this.state.rating3} checked={this.state.rating3} onClick={this.handleRating}/><label htmlFor="star3" title="Meh">3</label>
-                  <input type="radio" id="star4" name="rating4" value={this.state.rating4} checked={this.state.rating4} onClick={this.handleRating}/><label htmlFor="star4" title="Pretty good">4</label>
-                  <input type="radio" id="star5" name="rating5" value={this.state.rating5} checked={this.state.rating5} onClick={this.handleRating}/><label htmlFor="star5" title="Rocks!">5</label>
+                  <input type="radio" style={{marginRight: ".5em"}} id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1} onClick={this.handleRating}/><label style={{marginRight: "1em"}} htmlFor="star1" title="Sucks big time">1</label>
+                  <input type="radio" style={{marginRight: ".5em"}} id="star2" name="rating2" value={this.state.rating2} checked={this.state.rating2} onClick={this.handleRating}/><label style={{marginRight: "1em"}} htmlFor="star2" title="Kinda bad">2</label>
+                  <input type="radio" style={{marginRight: ".5em"}} id="star3" name="rating3" value={this.state.rating3} checked={this.state.rating3} onClick={this.handleRating}/><label style={{marginRight: "1em"}} htmlFor="star3" title="Meh">3</label>
+                  <input type="radio" style={{marginRight: ".5em"}} id="star4" name="rating4" value={this.state.rating4} checked={this.state.rating4} onClick={this.handleRating}/><label style={{marginRight: "1em"}} htmlFor="star4" title="Pretty good">4</label>
+                  <input type="radio" style={{marginRight: ".5em"}} id="star5" name="rating5" value={this.state.rating5} checked={this.state.rating5} onClick={this.handleRating}/><label style={{marginRight: "1em"}} htmlFor="star5" title="Rocks!">5</label>
               </fieldset>
             </div>
            <div className="form-group">

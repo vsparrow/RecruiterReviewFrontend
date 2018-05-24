@@ -50,6 +50,7 @@ class AddReview extends Component {
 
   handleSubmit = (event)=>{
     // console.log(event.target.name);
+    // event.preventDefault();
     console.log(this.props);
     if (event.target.name === "cancel") { this.props.cancelReview()}
     if (event.target.name === "submit") {
@@ -65,7 +66,7 @@ class AddReview extends Component {
       method: 'post',
       headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization},
       body: JSON.stringify({
-        user_id: this.props.state.user_id, 
+        user_id: this.props.state.user_id,
         recruiter_id: this.props.state.selectedRecruiterId,
         review: this.state.review,
         got_interview: this.state.interview,
@@ -110,36 +111,63 @@ class AddReview extends Component {
     let note = <span style={{color: "red"}}>*Review must be 15 characters or more to submit</span>
     return(
       <div className="AddReview" >
-        <h2>NEW REVIEW</h2>
-        RECOMMEND?<input name="recommended" type="checkbox" checked={this.state.recommended} onChange={this.handleInputChange} />
-        <br/>GOT AN INTERVIEW?<input name="interview" type="checkbox" checked={this.state.interview} onChange={this.handleInputChange} />
-        <br/>GOT AN JOB?<input name="job" type="checkbox" checked={this.state.job} onChange={this.handleInputChange} />
-        <br/>
-        <div>
-        <fieldset className="rating">
-            <legend>Please rate:</legend>
-            <input type="radio" id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1} onClick={this.handleRating}/><label htmlFor="star1" title="Sucks big time">1 star</label>
-            <input type="radio" id="star2" name="rating2" value={this.state.rating2} checked={this.state.rating2} onClick={this.handleRating}/><label htmlFor="star2" title="Kinda bad">2 stars</label>
-            <input type="radio" id="star3" name="rating3" value={this.state.rating3} checked={this.state.rating3} onClick={this.handleRating}/><label htmlFor="star3" title="Meh">3 stars</label>
-            <input type="radio" id="star4" name="rating4" value={this.state.rating4} checked={this.state.rating4} onClick={this.handleRating}/><label htmlFor="star4" title="Pretty good">4 stars</label>
-            <input type="radio" id="star5" name="rating5" value={this.state.rating5} checked={this.state.rating5} onClick={this.handleRating}/><label htmlFor="star5" title="Rocks!">5 stars</label>
-        </fieldset>
-        </div>
 
-        <br/>
-        <textarea rows="4" cols="60" value={this.state.review} name="review" onChange={this.handleInputChange}/>
-        <br/>
-        <br/>
-        {this.state.reviewShort ? note : null}
-        <br/>
 
-        <button onClick={this.handleSubmit} name="submit" >Submit</button>
-        <button onClick={this.handleSubmit} name="cancel">Cancel</button>
+        <div id="newrecform">
+          <h2>Add A New Review</h2>
+            <span style={{float: "left"}}>RECOMMEND?</span>
+            <input style={{float: "right"}}name="recommended" type="checkbox" checked={this.state.recommended} onChange={this.handleInputChange} />
+            <br/>
+            <span style={{float: "left"}}>GOT AN INTERVIEW? </span>
+            <input style={{float: "right"}}name="interview" type="checkbox" checked={this.state.interview} onChange={this.handleInputChange} />
+            <br/>
+            <span style={{float: "left"}}>GOT A JOB?</span>
+            <input style={{float: "right"}} name="job" type="checkbox" checked={this.state.job} onChange={this.handleInputChange} />
+            <br/>
+            <div>
+              <fieldset className="rating">
+                  <legend>Please rate:</legend>
+                  <input type="radio" id="star1" name="rating1" value={this.state.rating1} checked={this.state.rating1} onClick={this.handleRating}/><label htmlFor="star1" title="Sucks big time">1</label>
+                  <input type="radio" id="star2" name="rating2" value={this.state.rating2} checked={this.state.rating2} onClick={this.handleRating}/><label htmlFor="star2" title="Kinda bad">2</label>
+                  <input type="radio" id="star3" name="rating3" value={this.state.rating3} checked={this.state.rating3} onClick={this.handleRating}/><label htmlFor="star3" title="Meh">3</label>
+                  <input type="radio" id="star4" name="rating4" value={this.state.rating4} checked={this.state.rating4} onClick={this.handleRating}/><label htmlFor="star4" title="Pretty good">4</label>
+                  <input type="radio" id="star5" name="rating5" value={this.state.rating5} checked={this.state.rating5} onClick={this.handleRating}/><label htmlFor="star5" title="Rocks!">5</label>
+              </fieldset>
+            </div>
+           <div className="form-group">
+              <label  htmlFor="review">Review</label>
+              <br />
+              <div className="input-group">
+              <textarea rows="4" cols="60" value={this.state.review} name="review" onChange={this.handleInputChange}/>
+               {this.state.reviewShort ? note : null}
+              </div>
+           </div>
+           <button  onClick={this.handleSubmit} name="submit" className="btn btn-default">Submit</button>
+           <button  onClick={this.handleSubmit} name="cancel" className="btn btn-default">Cancel </button>
+         </div>
+
       </div>
     )
   }
 }
 export default AddReview
+
+
+// <h2>NEW REVIEW</h2>
+//
+//
+// <br/>
+//
+//
+// <br/>
+// <textarea rows="4" cols="60" value={this.state.review} name="review" onChange={this.handleInputChange}/>
+// <br/>
+// <br/>
+//
+// <br/>
+//
+// <button onClick={this.handleSubmit} name="submit" >Submit</button>
+// <button onClick={this.handleSubmit} name="cancel">Cancel</button>
   //
   // user_id: 1,
   //  recruiter_id: 2,

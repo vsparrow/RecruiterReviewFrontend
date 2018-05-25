@@ -28,6 +28,12 @@ class Header extends Component {
         // this.props.setSomeState("authorization","")
         this.props.setLogut()
         break;
+      case "search":
+        // console.log("search clicked")
+        let searchterm = this.state.searchterm
+        this.setState({searchterm: ""})
+        console.log(searchterm);
+        break;
       default:
 
     }
@@ -45,6 +51,7 @@ class Header extends Component {
     // let button5 = <a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a>
     let topright =   <div className="navbar-right" style={{textAlign: "right"}}>
       <input style={{verticalAlign: "top"}} onChange={this.handleChange} placeholder="Enter search term" value={this.state.searchterm}/>
+      <button className="btn btn-sm" name="search" onClick={this.handleClick}>SEARCH</button>
     <a href="#" style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a></div>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){

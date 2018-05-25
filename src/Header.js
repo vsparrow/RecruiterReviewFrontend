@@ -44,6 +44,7 @@ class Header extends Component {
     // console.log(this.props);
     let key = "searchterm"
     this.props.setSomeState(key, searchterm )
+    this.props.setSomeState("selectedRecruiterId", "search" )
   }
   //
   // search() {

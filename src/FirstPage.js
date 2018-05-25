@@ -4,6 +4,7 @@ import FirstPageDisplayRecruitersJunction from './FirstPageDisplayRecruitersJunc
 // import DisplayRecruiters from './DisplayRecruiters'
 // import DisplayRecruiterFull from './DisplayRecruiterFull'
 import RecruiterNewForm from './RecruiterNewForm'
+import Searchpage from "./Searchpage"
 import Header from "./Header"
 
 class FirstPage extends Component {
@@ -55,6 +56,7 @@ class FirstPage extends Component {
     let sendState = {...this.state,...this.props.state}
     let display = null;
     if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm state={sendState} addToRecruiters={this.addToRecruiters}/>}
+    else if(this.state.selectedRecruiterId === "search"){ display = <Searchpage state={this.sendState} setSomeState={this.setSomeState}/>}
     else {display = <FirstPageDisplayRecruitersJunction state={sendState} fetchRecruiters={this.fetchRecruiters} selectedRecruiterId={this.selectedRecruiterId}/>}
     return(
       <div className="FirstPage">

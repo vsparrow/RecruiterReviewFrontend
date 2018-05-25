@@ -30,14 +30,29 @@ class Header extends Component {
         break;
       case "search":
         // console.log("search clicked")
-        let searchterm = this.state.searchterm
-        this.setState({searchterm: ""})
-        console.log(searchterm);
+        this.handleSearch()
         break;
       default:
 
     }
   }
+
+  handleSearch = ()=>{
+    let searchterm = this.state.searchterm
+    this.setState({searchterm: ""})
+    console.log(searchterm);
+  }
+  //
+  // search() {
+  //   console.log("Enter Button Pressed");
+  // }
+  handleKeyPress(target) {
+    if(target.charCode==13){
+      // this.search();
+      this.handleSearch()
+    }
+  }
+
 
   render() {
     let buttons = "";
@@ -50,7 +65,7 @@ class Header extends Component {
     let topleft = <div className="navbar-left"><a href="#" onClick={this.handleClick} name="home">HOME</a><a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a></div>
     // let button5 = <a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a>
     let topright =   <div className="navbar-right" style={{textAlign: "right"}}>
-      <input style={{verticalAlign: "top"}} onChange={this.handleChange} placeholder="Enter search term" value={this.state.searchterm}/>
+      <input style={{verticalAlign: "top"}} onKeyPress={this.handleKeyPress.bind(this)} onChange={this.handleChange} placeholder="Enter search term" value={this.state.searchterm}/>
       <button className="btn btn-sm" name="search" onClick={this.handleClick}>SEARCH</button>
     <a href="#" style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a></div>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN

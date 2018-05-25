@@ -40,7 +40,10 @@ class Header extends Component {
   handleSearch = ()=>{
     let searchterm = this.state.searchterm
     this.setState({searchterm: ""})
-    console.log(searchterm);
+    // console.log(searchterm);
+    // console.log(this.props);
+    let key = "searchterm"
+    this.props.setSomeState(key, searchterm )
   }
   //
   // search() {

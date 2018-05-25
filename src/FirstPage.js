@@ -9,7 +9,8 @@ import Header from "./Header"
 class FirstPage extends Component {
   state = {
     recruiters: [],
-    selectedRecruiterId: null
+    selectedRecruiterId: null,
+    searchterm: ""
   }
 
   componentDidMount(){
@@ -41,7 +42,7 @@ class FirstPage extends Component {
 
 
   setSomeState = (key,value)=>{
-    this.setState({key: value})
+    this.setState({[key]: value})
   }
 
   addToRecruiters = (value, newrecid)=>{
@@ -49,6 +50,8 @@ class FirstPage extends Component {
   }
   //////////////////////////////////////////////////////////////////////////////
   render(){
+    console.log("FirstPage");
+    console.log(this.state);
     let sendState = {...this.state,...this.props.state}
     let display = null;
     if(this.state.selectedRecruiterId==="new"){ display = <RecruiterNewForm state={sendState} addToRecruiters={this.addToRecruiters}/>}

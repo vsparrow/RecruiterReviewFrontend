@@ -8,7 +8,12 @@ class FirstPage extends Component {
     this.fetchRecruiters()
   }
 
+  componentDidUpdate(){
+    this.fetchRecruiters()
+  }
+
   fetchRecruiters = ()=>{
+    console.log("*****************fetch");
     const url = this.props.state.url + "/search"
     fetch(url,{
       method: 'POST',

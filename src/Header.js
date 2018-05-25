@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 
 class Header extends Component {
 
+
+  state={searchterm: ""}
+
+  handleChange = (e)=>{
+    this.setState({searchterm: e.target.value},()=>{console.log(this.state)})
+  }
+
   handleClick=(e)=>{
     // console.log(e.target.name);
     // console.log(this.props);
@@ -37,7 +44,7 @@ class Header extends Component {
     let topleft = <div className="navbar-left"><a href="#" onClick={this.handleClick} name="home">HOME</a><a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a></div>
     // let button5 = <a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a>
     let topright =   <div className="navbar-right" style={{textAlign: "right"}}>
-      <input style={{verticalAlign: "top"}} placeholder="Enter search term"/> 
+      <input style={{verticalAlign: "top"}} onChange={this.handleChange} placeholder="Enter search term" value={this.state.searchterm}/>
     <a href="#" style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a></div>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){

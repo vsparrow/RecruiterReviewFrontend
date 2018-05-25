@@ -36,7 +36,9 @@ class Header extends Component {
     // let button4 = <a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a>
     let topleft = <div className="navbar-left"><a href="#" onClick={this.handleClick} name="home">HOME</a><a href="#" onClick={this.handleClick} name="addrecruiter">ADD Recruiter</a></div>
     // let button5 = <a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a>
-    let topright =   <div className="navbar-right" style={{textAlign: "right"}}><a href="#" onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a></div>
+    let topright =   <div className="navbar-right" style={{textAlign: "right"}}>
+      <input style={{verticalAlign: "top"}} placeholder="Enter search term"/> 
+    <a href="#" style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="logout">LOGOUT</a></div>
     ////////////////////////////////////////////////////////////////////////////NOT LOGGED IN
     // if(this.props.state.authorization === ""){
     //   // buttons = [button1, button2]

@@ -46,6 +46,17 @@
     text-decoration: none;
 }
 
+.navbar input{
+    float: left;
+    display: block;
+    /* color: #f2f2f2; */
+    text-align: center;
+    /* padding: 14px 16px; */
+    margin-top: 14px;
+    text-decoration: none;
+}
+
+
 /* Change background on mouse-over */
 .navbar a:hover {
     background: #ddd;

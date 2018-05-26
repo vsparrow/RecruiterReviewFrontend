@@ -1,16 +1,21 @@
 // called by FirstPage
 import React, { Component } from 'react';
 import SearchDisplay from "./SearchDisplay"
+let oldsearchterm = ""
+
 class Searchpage extends Component {
   state = {response_recruiters: []}
 
   componentDidMount(){
     // console.log("componentDidMount");
     this.fetchRecruiters()
+    oldsearchterm = this.props.state.searchterm
   }
 
   componentDidUpdate(){    //causes state loop, switch to ComponentReceiveProps?
+    if(this.props.state.searchterm !== oldsearchterm){
      this.fetchRecruiters()
+    }
   }
   // componentWillReceiveProps(){
   //    this.fetchRecruiters()

@@ -14,7 +14,7 @@ class SeachDisplay extends Component {
           <div className="" style={{float: "none", overflow: "hidden"}}>
           <h2>{recruiter.firstname} {recruiter.lastname}</h2>
           <h3>{recruiter.location}</h3>
-          <h4>Term found in: {recruiter.foundterm}</h4>
+          <h4>Term found in: {recruiter.foundterm} : <span style={{backgroundColor: "yellow"}}>{recruiter[recruiter.foundterm]}</span></h4>
           </div>
         </div>
       )
@@ -23,7 +23,7 @@ class SeachDisplay extends Component {
   }//displayResponseRecruiters
 
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     // console.log(this.displayResponseRecruiters());
     return(
       <div>

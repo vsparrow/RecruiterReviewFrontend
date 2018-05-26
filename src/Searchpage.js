@@ -1,7 +1,7 @@
 // called by FirstPage
 import React, { Component } from 'react';
-
-class FirstPage extends Component {
+import SearchDisplay from "./SearchDisplay"
+class Searchpage extends Component {
   state = {response_recruiters: []}
 
   componentDidMount(){
@@ -9,14 +9,15 @@ class FirstPage extends Component {
     this.fetchRecruiters()
   }
 
-  // componentDidUpdate(){    //causes state loop, switch to ComponentReceiveProps?
-  componentWillReceiveProps(){
+  componentDidUpdate(){    //causes state loop, switch to ComponentReceiveProps?
      this.fetchRecruiters()
-   }
-  // }
-
+  }
+  // componentWillReceiveProps(){
+  //    this.fetchRecruiters()
+  //  }
+  //
   fetchRecruiters = ()=>{
-    console.log("*****************fetch");
+    // console.log("*****************fetch");
     const url = this.props.state.url + "/search"
     fetch(url,{
       method: 'POST',
@@ -43,24 +44,27 @@ class FirstPage extends Component {
           <div className="" style={{float: "none", overflow: "hidden"}}>
           <h2>{recruiter.firstname} {recruiter.lastname}</h2>
           <h3>{recruiter.location}</h3>
+          <h4>Term found in: {recruiter.foundterm}</h4>
           </div>
         </div>
       )
     }//if
     return response
   }//displayResponseRecruiters
+  // {this.displayResponseRecruiters()}
 
   render(){
-    console.log(this.props);
-    console.log(this.displayResponseRecruiters());
+    let sendState = {...this.state,...this.props.state}
+    // console.log(this.props);
+    // console.log(this.displayResponseRecruiters());
     return(
       <div>
         SEARCH
         <br/>
         <h1>Search for: <em>{this.props.state.searchterm}</em></h1>
-        {this.displayResponseRecruiters()}
+        <SearchDisplay state={sendState}/>
       </div>
     )
   }
 }
-export default FirstPage
+export default Searchpage

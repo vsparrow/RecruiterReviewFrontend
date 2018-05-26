@@ -43,7 +43,7 @@ class SeachDisplay extends Component {
     // console.log(this.displayResponseRecruiters());
     let recruiters =  this.props.state.response_recruiters.map((recruiter,index)=>
       <div key={index}>
-        <SearchDisplayRecruiter recruiter={recruiter} state={this.props.state}/>
+        <SearchDisplayRecruiter recruiter={recruiter} state={this.props.state} setSomeState={this.props.setSomeState}/>
       </div>
     )
 

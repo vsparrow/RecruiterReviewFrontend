@@ -67,7 +67,7 @@ class Searchpage extends Component {
         SEARCH
         <br/>
         <h1>Search for: <em>{this.props.state.searchterm}</em></h1>
-        <SearchDisplay state={sendState}/>
+        <SearchDisplay state={sendState} setSomeState={this.props.setSomeState}/>
       </div>
     )
   }

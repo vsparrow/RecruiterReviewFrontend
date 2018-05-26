@@ -5,6 +5,9 @@ class SearchDisplayRecruiter extends Component {
 
   handleClick = (event)=>{
     event.preventDefault();
+    // console.log(this.props.recruiter.id);
+    // console.log(this.props);
+    this.props.setSomeState("selectedRecruiterId", this.props.recruiter.id)
   }
 
   render(){

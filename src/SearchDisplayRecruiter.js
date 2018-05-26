@@ -20,7 +20,6 @@ class SearchDisplayRecruiter extends Component {
          <h2>{recruiter.firstname} {recruiter.lastname}</h2>
          <h3>{recruiter.location}</h3>
          <h4>Term found in: {recruiter.foundterm} : <span style={{backgroundColor: "yellow"}}>{recruiter[recruiter.foundterm]}</span></h4>
-         {recruiter.id}
          </div>
        </div>
       </div>

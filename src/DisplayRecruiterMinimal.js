@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 
 class DisplayRecruiterMinimal extends Component {
   handleClick = ()=>{
-    // this.props.handleClickOnRec(this.props.index)
     this.props.handleClickOnRec(this.props.recruiter.id)
   }
   render(){
-    console.log(this.props.recruiter);
     return(
       <div className="DisplayRecruiterMinimal wrapper-relatives" style={{borderStyle: "solid",clear: "both" }} onClick={this.handleClick}>
         <img className="img-recruiters" src={ require('./placeholder.png') }/>
@@ -20,4 +18,3 @@ class DisplayRecruiterMinimal extends Component {
   }
 }
 export default DisplayRecruiterMinimal
- // style="clear: both;"

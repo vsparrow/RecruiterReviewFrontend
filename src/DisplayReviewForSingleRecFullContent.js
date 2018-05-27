@@ -1,77 +1,77 @@
-////////////////////////////////////////
-// might not be used 
-////////////////////////////////////////
-////////////////////////////////////////
-////////////////////////////////////////
-////////////////////////////////////////
-////////////////////////////////////////
-
-import React from 'react';
-// import PropTypes from 'prop-types';
-
-class Modal extends React.Component {
-
-  render() {
-      console.log(this.props);
-    // Render nothing if the "show" prop is false
-    if(!this.props.show) {
-      return null;
-    }
-
-    // The gray background
-    const backdropStyle = {
-      position: 'fixed',
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      backgroundColor: 'rgba(0,0,0,0.3)',
-      padding: 50
-    };
-
-    // The modal "window"
-    const modalStyle = {
-      backgroundColor: '#fff',
-      borderRadius: 5,
-      maxWidth: 500,
-      minHeight: 300,
-      margin: '0 auto',
-      padding: 30
-    };
-
-    return (
-      <div className="backdrop" style={{}} >
-        <div className="modal" style={{}} >
-          {/*this.props.children*/}
-
-          <div className="footer">
-
-              Close
-
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+// ////////////////////////////////////////
+// // might not be used
+// ////////////////////////////////////////
+// ////////////////////////////////////////
+// ////////////////////////////////////////
+// ////////////////////////////////////////
+// ////////////////////////////////////////
 //
-// Modal.propTypes = {
-//   onClose: PropTypes.func.isRequired,
-//   show: PropTypes.bool,
-//   children: PropTypes.node
-// };
-// {  /*<button onClick={/*this.props.onClose*/}>*/}
-
-export default Modal;
-// import React, { Component } from 'react';
+// import React from 'react';
+// // import PropTypes from 'prop-types';
 //
-// class DisplayReviewForSingleRecFullContent extends Component {
+// class Modal extends React.Component {
 //
+//   render() {
+//       console.log(this.props);
+//     // Render nothing if the "show" prop is false
+//     if(!this.props.show) {
+//       return null;
+//     }
 //
-//   render(){
+//     // The gray background
+//     const backdropStyle = {
+//       position: 'fixed',
+//       top: 0,
+//       bottom: 0,
+//       left: 0,
+//       right: 0,
+//       backgroundColor: 'rgba(0,0,0,0.3)',
+//       padding: 50
+//     };
 //
-//     return(
-//     )
+//     // The modal "window"
+//     const modalStyle = {
+//       backgroundColor: '#fff',
+//       borderRadius: 5,
+//       maxWidth: 500,
+//       minHeight: 300,
+//       margin: '0 auto',
+//       padding: 30
+//     };
+//
+//     return (
+//       <div className="backdrop" style={{}} >
+//         <div className="modal" style={{}} >
+//           {/*this.props.children*/}
+//
+//           <div className="footer">
+//
+//               Close
+//
+//           </div>
+//         </div>
+//       </div>
+//     );
 //   }
 // }
-// export default DisplayReviewForSingleRecFullContent
+// //
+// // Modal.propTypes = {
+// //   onClose: PropTypes.func.isRequired,
+// //   show: PropTypes.bool,
+// //   children: PropTypes.node
+// // };
+// // {  /*<button onClick={/*this.props.onClose*/}>*/}
+//
+// export default Modal;
+// // import React, { Component } from 'react';
+// //
+// // class DisplayReviewForSingleRecFullContent extends Component {
+// //
+// //
+// //   render(){
+// //
+// //     return(
+// //     )
+// //   }
+// // }
+// // export default DisplayReviewForSingleRecFullContent

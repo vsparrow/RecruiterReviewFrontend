@@ -7,7 +7,6 @@ class Searchpage extends Component {
   state = {response_recruiters: []}
 
   componentDidMount(){
-    // console.log("componentDidMount");
     this.fetchRecruiters()
     oldsearchterm = this.props.state.searchterm
   }
@@ -17,10 +16,7 @@ class Searchpage extends Component {
      this.fetchRecruiters()
     }
   }
-  // componentWillReceiveProps(){
-  //    this.fetchRecruiters()
-  //  }
-  //
+
   fetchRecruiters = ()=>{
     // console.log("*****************fetch");
     const url = this.props.state.url + "/search"
@@ -34,8 +30,6 @@ class Searchpage extends Component {
   }//fetchRecruiters
 
   handleJSON = (json)=>{
-    // console.log(json);
-    // if(this.state.response_recruiters !== json.response_recruiters)        //cause an state loop
     {this.setState({response_recruiters: json.response_recruiters})}
   }
 
@@ -56,12 +50,9 @@ class Searchpage extends Component {
     }//if
     return response
   }//displayResponseRecruiters
-  // {this.displayResponseRecruiters()}
 
   render(){
     let sendState = {...this.state,...this.props.state}
-    // console.log(this.props);
-    // console.log(this.displayResponseRecruiters());
     return(
       <div>
         SEARCH

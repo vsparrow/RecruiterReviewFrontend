@@ -10,17 +10,12 @@ class Signup extends Component {
   }
 
   handleChange = (event)=>{
-    // console.log(event.target.value);
-    // console.log(event.target.name);
     this.setState({[event.target.name]: event.target.value})
   }
 
   handleSubmit = (event)=>{
     event.preventDefault();
-    console.log(this.state);
     this.fetchData()
-    // {this.fetchData}
-    // this.setState({email: "",password: "", firstname: "", lastname: ""})
   }
 
   fetchData = ()=>{
@@ -31,12 +26,10 @@ class Signup extends Component {
       body: JSON.stringify({email: this.state.email, password: this.state.password,firstname: this.state.firstname,lastname: this.state.lastname})
     })//fetch
     .then(res=>res.json())
-    // .then(json=>console.log(json))
     .then(json=>this.handleSignupJSON(json))
   }
 
   handleSignupJSON = (json)=>{
-    console.log(json);
     if (json.error){this.setState({error: true})}
     else if (json.ok) {
       console.log("Creation successful")
@@ -61,19 +54,14 @@ class Signup extends Component {
       body: JSON.stringify({email: this.state.email, password: this.state.password})
     })//fetch
     .then(res=>res.json())
-    // .then(json=>console.log(json))
     .then(json=>this.handleJSON(json))
   }//fetchAuthorization
 
   handleJSON = (json)=>{
-    // console.log(json);
     json.error ? this.setState({errorOnAuthenticate: true}) : this.handleAuthenticate(json)
   }//handleJSON
 
   handleAuthenticate = (json)=>{
-    console.log("handleAuthenticate");
-    console.log(json.auth_token);
-    //if successful pass token backup to app
     this.props.setAuthorization(json)
   }
   //////////////////////////////////////////////////////////// above same as Login.js, refactor this

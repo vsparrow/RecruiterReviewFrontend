@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Login from "./Login"
 import Signup from "./Signup"
-
+import HeaderLoginSignup from "./HeaderLoginSignup"
 class LoginOrSignup extends Component {
   state = {login: true}
 
@@ -15,6 +15,7 @@ class LoginOrSignup extends Component {
   render(){
     return(
       <div>
+        <HeaderLoginSignup displayLoginToggle={this.displayLoginToggle} />
         {this.state.login ? <Login displayLoginToggle={this.displayLoginToggle} setAuthorization={this.props.setAuthorization}/> : < Signup displayLoginToggle={this.displayLoginToggle} setAuthorization={this.props.setAuthorization}/>}
       </div>
     )//return

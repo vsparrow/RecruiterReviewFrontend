@@ -41,6 +41,9 @@
     color: black;
 }
 
+form-signin {
+  padding-top: 30px;  /* gives small padding to move away from navbar; used for login and signup */
+}
 /* Main content */
 .main {
     margin-top: 75px; /* Add a top margin to avoid content overlay */

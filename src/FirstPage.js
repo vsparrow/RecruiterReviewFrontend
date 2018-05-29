@@ -23,7 +23,7 @@ class FirstPage extends Component {
       headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization}
     })
     .then(res=>res.json())
-    .then(json=>{this.setState({recruiters: json})
+    .then(json=>{json.sort(function(a, b){return 0.5 - Math.random()}); this.setState({recruiters: json})
     })
   }//fetchRecruiters
 
@@ -39,7 +39,7 @@ class FirstPage extends Component {
   addToRecruiters = (value, newrecid)=>{
     this.setState({recruiters: value,selectedRecruiterId: newrecid})
   }
-  
+
   render(){
     let sendState = {...this.state,...this.props.state}
     let display = null;

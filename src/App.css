@@ -140,14 +140,15 @@ form-signin {
 /*  for new recruiter */
 #newrecform {
   color: white;
-  background-color: #ddd;
+  /* background-color: #ddd; */
+  background-color: #2f2e2e;
   border-radius: 5px;
   width: 400px;
   padding: 40px;
   margin: 20px auto;
-  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);   /*  Changed box shadow from 18px to 5px*/
+  -moz-box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 #newrecform p {
   font-size: 0.9em;

@@ -13,8 +13,9 @@ class DisplayReviewForSingleRec extends Component {
   }
 
   handleClick =()=>{
-    console.log("clicking");
-    this.setState({show: !this.state.show}, ()=>{console.log(this.state)})
+    // console.log("clicking");
+    // this.setState({show: !this.state.show}, ()=>{console.log(this.state)})
+    this.setState({show: !this.state.show})
   }
 
   render(){

@@ -13,7 +13,7 @@ class SearchDisplayRecruiter extends Component {
     return(
       <div>
         <div className="SearchDisplayRecruiter wrapper-relatives" style={{borderStyle: "solid",clear: "both" }} onClick={this.handleClick} >
-         <img className="img-recruiters" src={ require('./placeholder.png') }/>
+         <img className="img-recruiters" alt="Placeholder for recruiter"  src={ require('./placeholder.png') }/>
          <div className="" style={{float: "none", overflow: "hidden"}}>
          <h2>{recruiter.firstname} {recruiter.lastname}</h2>
          <h3>{recruiter.location}</h3>

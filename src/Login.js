@@ -56,7 +56,7 @@ class Login extends Component {
               </form>
               {this.state.errorOnAuthenticate ? <p style={{color: "red"}}>ERROR SUBMITING EMAIL OR PASSSWORD</p> : null}
             </div>
-            <a  href="#" onClick={this.toggleToSignup}>No Login? Click here to Signup</a>
+            <a  tabIndex="0"  onClick={this.toggleToSignup}>No Login? Click here to Signup</a>
       </div>
     )
   }//render

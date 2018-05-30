@@ -19,7 +19,7 @@ class DisplayRecruiterFull extends Component {
     return(
       <div className="DisplayRecruiterFull " >
         <div className="wrapper-relatives">
-          <img className="img-recruiter" src={ require('./placeholder.png') }/>
+          <img className="img-recruiter" alt="Placeholder for recruiter"  src={ require('./placeholder.png') }/>
           <h1 style={{fontWeight: 800}}>{recruiter.firstname} {recruiter.lastname}</h1>
           <h2>{recruiter.company}</h2>
           <h3>{recruiter.email }</h3>

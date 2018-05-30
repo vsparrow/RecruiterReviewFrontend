@@ -30,7 +30,7 @@ class Searchpage extends Component {
   }//fetchRecruiters
 
   handleJSON = (json)=>{
-    {this.setState({response_recruiters: json.response_recruiters})}
+    this.setState({response_recruiters: json.response_recruiters})
   }
 
   displayResponseRecruiters = ()=>{
@@ -39,7 +39,7 @@ class Searchpage extends Component {
       response = this.state.response_recruiters.map((recruiter,index)=>
 
          <div key={index} className="SearchPage_displayResponseRecruiters wrapper-relatives" style={{borderStyle: "solid",clear: "both" }} >
-          <img className="img-recruiters" src={ require('./placeholder.png') }/>
+          <img className="img-recruiters" alt="Placeholder for recruiter"  src={ require('./placeholder.png') }/>
           <div className="" style={{float: "none", overflow: "hidden"}}>
           <h2>{recruiter.firstname} {recruiter.lastname}</h2>
           <h3>{recruiter.location}</h3>

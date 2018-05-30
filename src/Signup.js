@@ -83,7 +83,7 @@ class Signup extends Component {
           </form>
         </div>
         {this.state.error ? <span style={{color: "red"}}>ERROR PLEASE CHECK INPUT</span> : null}
-        <a  href="#" onClick={this.toggleToLogin}>Already Have A Login? Click here</a>
+        <a  tabIndex="0" onClick={this.toggleToLogin}>Already Have A Login? Click here</a>
 
       </div>
     )

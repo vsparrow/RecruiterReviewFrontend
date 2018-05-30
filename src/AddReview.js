@@ -78,7 +78,7 @@ class AddReview extends Component {
 
   handleJSON = (json)=>{
     if(json["POSTED REVIEW"]){
-      console.log("POSTED REVIEW success");
+      // console.log("POSTED REVIEW success");
       this.props.fetchRecruiters()
       this.props.cancelReview()
     }

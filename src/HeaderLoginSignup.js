@@ -27,11 +27,11 @@ class HeaderLoginSignup extends Component {
 
   render() {
     // let buttons = "";
-    let topleft = <div className="navbar-left"><a href="#" onClick={this.handleClick} name="home">RECRUITER REVIEW</a></div>
+    let topleft = <div className="navbar-left"><a tabIndex="0" onClick={this.handleClick} name="home">RECRUITER REVIEW</a></div>
     let topright =   <div className="navbar-right" style={{textAlign: "right"}}>
 
-    <a href="#" style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="login">LOGIN</a>
-    <a href="#" style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="signup">SIGNUP</a></div>
+    <a tabIndex="0"  style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="login">LOGIN</a>
+    <a tabIndex="0"  style={{verticalAlign: "top"}} onClick={this.handleClick} className="pull-right" name="signup">SIGNUP</a></div>
 
     return (
       <div className="HeaderLoginSignup navbar">

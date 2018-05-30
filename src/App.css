@@ -195,3 +195,13 @@ form-signin {
   border: none;
   border-radius: 0 5px 5px 0;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+  inputs*/
+    color: #000;
+    opacity: 1; /* Firefox */
+}
+
+#newRecSubmit, #newRevSubmit{
+  background-color: gold;
+  color: black !important;
+}

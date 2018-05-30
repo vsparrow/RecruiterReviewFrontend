@@ -68,62 +68,54 @@ render(){
       <form id="newrecform" onSubmit={this.handleSubmit}>
         <h2>Add A New Recruiter</h2>
          <div className="form-group">
-            <label  htmlFor="firstname">First Name</label>
             <br />
             <div className="input-group">
-               <input type="text" name="firstname" value={this.state.firstname} placeholder="Enter first name" onChange={this.handleChange} required/>
+               <input type="text" name="firstname" value={this.state.firstname} placeholder="first name" onChange={this.handleChange} required/>
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="lastname">Last Name</label>
             <br />
             <div className="input-group">
-               <input type="text" name="lastname" value={this.state.lastname } placeholder="Enter last name" onChange={this.handleChange} required/>
+               <input type="text" name="lastname" value={this.state.lastname } placeholder="last name" onChange={this.handleChange} required/>
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="email">Email Address</label>
             <br />
             <div className="input-group">
-               <input type="text" name="email" value={this.state.email } placeholder="Enter email address" onChange={this.handleChange} required/>
+               <input type="text" name="email" value={this.state.email } placeholder="email address" onChange={this.handleChange} required/>
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="phonenumber">Phone Number</label>
             <br />
             <div className="input-group">
-               <input type="text" name="phonenumber" value={this.state.phonenumber } placeholder="Enter phone number" onChange={this.handleChange} />
+               <input type="text" name="phonenumber" value={this.state.phonenumber } placeholder="phone number" onChange={this.handleChange} />
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="company">Company</label>
             <br />
             <div className="input-group">
-               <input type="text" name="company" value={this.state.company } placeholder="Enter company name" onChange={this.handleChange} />
+               <input type="text" name="company" value={this.state.company } placeholder="company name" onChange={this.handleChange} />
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="website">Website Address</label>
             <br />
             <div className="input-group">
-               <input type="text" name="website" value={this.state.website } placeholder="Enter website address" onChange={this.handleChange} />
+               <input type="text" name="website" value={this.state.website } placeholder="website address" onChange={this.handleChange} />
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="linkedin">Linkedin Address</label>
             <br />
             <div className="input-group">
-               <input type="text" name="linkedin" value={this.state.linkedin } placeholder="Enter linkedin address" onChange={this.handleChange} />
+               <input type="text" name="linkedin" value={this.state.linkedin } placeholder="linkedin address" onChange={this.handleChange} />
             </div>
          </div>
          <div className="form-group">
-            <label  htmlFor="location">Location</label>
             <br />
             <div className="input-group">
-               <input type="text" name="location" value={this.state.location } placeholder="Enter location" onChange={this.handleChange} />
+               <input type="text" name="location" value={this.state.location } placeholder="location" onChange={this.handleChange} />
             </div>
          </div>
-         <button type="submit" className="btn btn-default">Add Recruiter</button>
+         <button id="newRecSubmit" type="submit" className="btn btn-default">Add Recruiter</button>
        </form>
     </div>
   )

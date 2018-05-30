@@ -122,7 +122,7 @@ class AddReview extends Component {
                {this.state.reviewShort ? note : null}
               </div>
            </div>
-           <button  onClick={this.handleSubmit} name="submit" className="btn btn-default">Submit</button>
+           <button  id="newRevSubmit" onClick={this.handleSubmit} name="submit" className="btn btn-default">Submit</button>
            <button  onClick={this.handleSubmit} name="cancel" className="btn btn-default">Cancel </button>
          </div>
 

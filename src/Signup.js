@@ -82,7 +82,9 @@ class Signup extends Component {
             <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
           </form>
         </div>
-        {this.state.error ? <span style={{color: "red"}}>ERROR PLEASE CHECK INPUT</span> : null}
+        <div>
+          {this.state.error ? <span style={{color: "red"}}>ERROR PLEASE CHECK INPUT</span> : null}
+        </div>
         <a  tabIndex="0" onClick={this.toggleToLogin}>Already Have A Login? Click here</a>
 
       </div>

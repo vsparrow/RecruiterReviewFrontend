@@ -13,7 +13,6 @@ class SeachDisplay extends Component {
 
     return(
       <div>
-        SearchDisplay
         {recruiters}
       </div>
     )

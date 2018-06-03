@@ -36,8 +36,12 @@ class Signup extends Component {
       console.log("Creation successful")
       //either auto login or send to login page
       //since we stil have password,username in state, we can call fetch to login
-      this.fetchAuthorization()
-
+      // this.fetchAuthorization()
+      let that = this
+      setTimeout(function(){
+        console.log(that.state);
+        that.fetchAuthorization(that)
+      },2000)
     }
   }
 
@@ -46,21 +50,35 @@ class Signup extends Component {
   }
 
   //////////////////////////////////////////////////////////// same as login, refactor this
-  fetchAuthorization = ()=>{
+  fetchAuthorization = (that)=>{
     // json post with email and password in body
-    let loginurl = "http://127.0.0.1:3000/authenticate"
+    // let loginurl = "http://127.0.0.1:3000/authenticate"
+    let loginurl =  this.props.state.url + "/authenticate"
     fetch(loginurl, {
       method: 'post',
       headers: {'Content-type' : 'application/json'},
-      body: JSON.stringify({email: this.state.email, password: this.state.password})
+      body: JSON.stringify({email: that.state.email, password: that.state.password})
     })//fetch
     .then(res=>res.json())
     .then(json=>this.handleJSON(json))
   }//fetchAuthorization
 
   handleJSON = (json)=>{
+    // let json2 = json
+    // let that = this
+    // setTimeout(function(){ console.log("Hello, waiting for heroku");
+    //   // json.error ? this.setState({errorOnAuthenticate: true}) : this.handleAuthenticate(json)
+    //   console.log("this is the json");
+    //   console.log(json);
+    //   that.handleJSONpostwait(json2)
+    // }, 5000);
     json.error ? this.setState({errorOnAuthenticate: true}) : this.handleAuthenticate(json)
   }//handleJSON
+
+  handleJSONpostwait=(json)=>{
+    json.error ? this.setState({errorOnAuthenticate: true}) : this.handleAuthenticate(json)
+
+  }
 
   handleAuthenticate = (json)=>{
     this.props.setAuthorization(json)

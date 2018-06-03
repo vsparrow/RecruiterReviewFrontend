@@ -19,7 +19,8 @@ class Signup extends Component {
   }
 
   fetchData = ()=>{
-    const url = "http://127.0.0.1:3000"
+    // const url = "http://127.0.0.1:3000"
+    const url = this.props.state.url
     fetch(url+"/signup", {
       method: 'post',
       headers: {'Content-type' : 'application/json'},

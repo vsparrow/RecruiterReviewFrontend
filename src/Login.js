@@ -21,7 +21,8 @@ class Login extends Component {
 
   fetchAuthorization = ()=>{
     // json post with email and password in body
-    let loginurl = "http://127.0.0.1:3000/authenticate"
+    // let loginurl = "http://127.0.0.1:3000/authenticate"
+    let loginurl = this.props.state.url + "/authenticate"
     fetch(loginurl, {
       method: 'post',
       headers: {'Content-type' : 'application/json'},

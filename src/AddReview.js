@@ -58,7 +58,8 @@ class AddReview extends Component {
   }
 
   submitReview=()=>{
-    let url = "http://127.0.0.1:3000/reviews"
+    // let url = "http://127.0.0.1:3000/reviews"
+    let url = this.props.state.url + "/reviews"
     fetch(url, {
       method: 'post',
       headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization},

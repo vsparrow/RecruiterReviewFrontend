@@ -16,7 +16,7 @@ class LoginOrSignup extends Component {
     return(
       <div>
         <HeaderLoginSignup displayLoginToggle={this.displayLoginToggle} />
-        {this.state.login ? <Login displayLoginToggle={this.displayLoginToggle} setAuthorization={this.props.setAuthorization}/> : < Signup displayLoginToggle={this.displayLoginToggle} setAuthorization={this.props.setAuthorization}/>}
+        {this.state.login ? <Login state={this.props.state} displayLoginToggle={this.displayLoginToggle} setAuthorization={this.props.setAuthorization}/> : < Signup state={this.props.state} displayLoginToggle={this.displayLoginToggle} setAuthorization={this.props.setAuthorization}/>}
       </div>
     )//return
   }//render

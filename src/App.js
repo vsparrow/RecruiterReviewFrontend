@@ -28,7 +28,16 @@ class App extends Component {
     this.setState({login: true, authorization: "", user_id: null})
   }
 
+  //*******THIS FETCH IS ONLY FOR WAKING UP THE HEROKU BACKEND WHEN FRONTEND ACCESSED *********
+  fetchHeroku=()=>{
+    fetch(url)
+    .then(res=>res.json())
+    .then(json=>console.log(json))
+  }
+  //*******THIS FETCH ABOVE IS ONLY FOR WAKING UP THE HEROKU BACKEND WHEN FRONTEND ACCESSED *********
+
   render() {
+    {this.fetchHeroku}
     return (
       <div className="App">
       { this.state.authorization ? <FirstPage state={this.state} setLogut={this.setLogut}/> : <LoginOrSignup state={this.state} setAuthorization={this.setAuthorization} setLogin={this.setLogin}/>}

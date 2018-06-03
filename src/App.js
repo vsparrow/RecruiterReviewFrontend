@@ -30,7 +30,7 @@ class App extends Component {
 
   //*******THIS FETCH IS ONLY FOR WAKING UP THE HEROKU BACKEND WHEN FRONTEND ACCESSED *********
   fetchHeroku=()=>{
-    fetch(url)
+    fetch(this.state.url)
     .then(res=>res.json())
     .then(json=>console.log(json))
   }

@@ -6,7 +6,8 @@ class Signup extends Component {
     password: "",
     firstname: "",
     lastname: "",
-    error: false
+    error: false,
+    loggingIn: false
   }
 
   handleChange = (event)=>{
@@ -37,6 +38,7 @@ class Signup extends Component {
       //either auto login or send to login page
       //since we stil have password,username in state, we can call fetch to login
       // this.fetchAuthorization()
+      this.setState({loggingIn: true})
       let that = this
       setTimeout(function(){
         console.log(that.state);
@@ -99,6 +101,8 @@ class Signup extends Component {
             <input type="text" className="form-control" name="email" placeholder="Email" onChange={this.handleChange} value={this.state.email} required="" autoFocus="" />
             <input type="password" className="form-control" name="password" placeholder="Password" onChange={this.handleChange} value={this.state.password} required=""/>
             <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            {this.state.loggingIn ? <span style={{color: "red"}}>AUTOLOGGING IN, PLEASE WAIT</span> : null}
+
           </form>
         </div>
         <div>

@@ -37,7 +37,7 @@ class App extends Component {
   //*******THIS FETCH ABOVE IS ONLY FOR WAKING UP THE HEROKU BACKEND WHEN FRONTEND ACCESSED *********
 
   render() {
-    {this.fetchHeroku}
+    this.fetchHeroku()
     return (
       <div className="App">
       { this.state.authorization ? <FirstPage state={this.state} setLogut={this.setLogut}/> : <LoginOrSignup state={this.state} setAuthorization={this.setAuthorization} setLogin={this.setLogin}/>}

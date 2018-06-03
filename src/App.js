@@ -30,9 +30,15 @@ class App extends Component {
 
   //*******THIS FETCH IS ONLY FOR WAKING UP THE HEROKU BACKEND WHEN FRONTEND ACCESSED *********
   fetchHeroku=()=>{
-    fetch(this.state.url)
-    .then(res=>res.json())
-    .then(json=>console.log(json))
+    fetch(this.state.url + "reviews")
+    .then(res=>{
+      let r = null
+      console.log("There is a call made here to wake up the backend heroku app if its sleeping. Heroku Free Plan. Remove if upgraded.");
+      res.length > 0 ?  r = res.json() :  r = ""
+      return r
+    })
+    // .then(res=>res.json())
+    // .then(json=>console.log(json))
   }
   //*******THIS FETCH ABOVE IS ONLY FOR WAKING UP THE HEROKU BACKEND WHEN FRONTEND ACCESSED *********
 

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 class RecruiterNewForm extends Component {
-state = { firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: ""}
+state = { firstname: "", lastname: "", email: "", phonenumber: "", company: "", website: "", linkedin: "", location: "", submit: false}
 
 handleChange = (event)=>{
   this.setState({[event.target.name]: event.target.value})
@@ -22,6 +22,7 @@ handleSubmit = (event)=>{
 submitRecruiter = ()=>{
 
   let url = this.props.state.url + "/recruiters"
+  this.setState({submit: true})
   fetch(url, {
     method: 'post',
     headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization},
@@ -116,6 +117,8 @@ render(){
             </div>
          </div>
          <button id="newRecSubmit" type="submit" className="btn btn-default">Add Recruiter</button>
+         {this.state.submit ? <span style={{color: "red"}}>SUBMITTED, PLEASE WAIT</span> : null}
+
        </form>
     </div>
   )

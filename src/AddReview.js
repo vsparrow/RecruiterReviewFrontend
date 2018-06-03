@@ -7,7 +7,8 @@ class AddReview extends Component {
     rating3: false,
     rating4: false,
     rating5: false,
-    rating: null
+    rating: null,
+    submit: false
   }
 
   handleInputChange = (event)=>{
@@ -60,6 +61,7 @@ class AddReview extends Component {
   submitReview=()=>{
     // let url = "http://127.0.0.1:3000/reviews"
     let url = this.props.state.url + "/reviews"
+    this.setState({submit: true})
     fetch(url, {
       method: 'post',
       headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization},
@@ -125,6 +127,8 @@ class AddReview extends Component {
            </div>
            <button  id="newRevSubmit" onClick={this.handleSubmit} name="submit" className="btn btn-default">Submit</button>
            <button  onClick={this.handleSubmit} name="cancel" className="btn btn-default">Cancel </button>
+           {this.state.submit ? <span style={{color: "red"}}>SUBMITTED REVIEW, PLEASE WAIT</span> : null}
+
          </div>
 
       </div>

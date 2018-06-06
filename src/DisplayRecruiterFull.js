@@ -17,12 +17,18 @@ class DisplayRecruiterFull extends Component {
     this.setState({average_rating: rating})
   }
 
+
+
   render(){
     let recruiter=this.props.state.recruiters.find((r)=>{ return r.id === this.props.state.selectedRecruiterId})
     let  sendState = {...this.state,...this.props.state}
     // console.log(recruiter);
-
-
+    let stars = []
+    // if(this.state.average_rating){
+      for(let i=0;i<this.state.average_rating;i++){
+        stars.push(<i key={i} className="fas fa-star"></i>)
+      }
+    // }
     return(
       <div className="DisplayRecruiterFull " >
         <div className="wrapper-relatives">
@@ -35,7 +41,7 @@ class DisplayRecruiterFull extends Component {
           <h3>{recruiter.website}</h3>
           <h3>{recruiter.location}</h3>
           {this.state.average_rating > 0 ? <h3>Average Rating: {this.state.average_rating}</h3> : null}
-
+          <span style={{fontSize: "2em"}}>{stars}</span>
         </div>
         <button className="btn btn-success btn-large" onClick={this.handleClick}>ADD REVIEW</button>
 

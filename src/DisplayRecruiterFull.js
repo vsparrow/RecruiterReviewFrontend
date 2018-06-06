@@ -40,8 +40,7 @@ class DisplayRecruiterFull extends Component {
           <h3>{recruiter.linkedin}</h3>
           <h3>{recruiter.website}</h3>
           <h3>{recruiter.location}</h3>
-          {this.state.average_rating > 0 ? <h3>Average Rating: {this.state.average_rating}</h3> : null}
-          <span style={{fontSize: "2em"}}>{stars}</span>
+          {this.state.average_rating > 0 ? <h3><span style={{fontSize: "2em"}}>{stars}</span></h3> : null}
         </div>
         <button className="btn btn-success btn-large" onClick={this.handleClick}>ADD REVIEW</button>
 

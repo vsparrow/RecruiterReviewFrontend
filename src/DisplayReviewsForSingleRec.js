@@ -11,7 +11,12 @@ class DisplayReviewsForSingleRec extends Component {
       headers: {'Content-type' : 'application/json', authorization: this.props.state.authorization}
     })
     .then(res=>res.json())
-    .then(json=> this.setState({reviewsSingleRec: json.reviews}))
+    .then(json=>
+      {
+        this.setState({reviewsSingleRec: json.reviews})
+        this.props.set_average_rating(json.average_rating)
+      }
+    )
   }
 
   render(){

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import DisplayReviewsForSingleRec from './DisplayReviewsForSingleRec'
 import AddReview from './AddReview'
 class DisplayRecruiterFull extends Component {
-  state = {addReview: false}
+  state = {addReview: false, average_rating: 0}
 
   handleClick = ()=>{
     this.setState({addReview: true})
@@ -13,9 +13,14 @@ class DisplayRecruiterFull extends Component {
     this.setState({addReview: false})
   }
 
+  set_average_rating = (rating)=>{
+    this.setState({average_rating: rating})
+  }
+
   render(){
     let recruiter=this.props.state.recruiters.find((r)=>{ return r.id === this.props.state.selectedRecruiterId})
     let  sendState = {...this.state,...this.props.state}
+    console.log(recruiter);
     return(
       <div className="DisplayRecruiterFull " >
         <div className="wrapper-relatives">
@@ -27,10 +32,12 @@ class DisplayRecruiterFull extends Component {
           <h3>{recruiter.linkedin}</h3>
           <h3>{recruiter.website}</h3>
           <h3>{recruiter.location}</h3>
+          <h3>{this.state.average_rating}</h3>
+
         </div>
         <button className="btn btn-success btn-large" onClick={this.handleClick}>ADD REVIEW</button>
 
-        {this.state.addReview ? <AddReview state={sendState} cancelReview={this.cancelReview} fetchRecruiters={this.props.fetchRecruiters}/> : <DisplayReviewsForSingleRec state={this.props.state}/>}
+        {this.state.addReview ? <AddReview state={sendState} cancelReview={this.cancelReview} fetchRecruiters={this.props.fetchRecruiters}/> : <DisplayReviewsForSingleRec state={this.props.state} set_average_rating={this.set_average_rating}/>}
       </div>
     )
   }

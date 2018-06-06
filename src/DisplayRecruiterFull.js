@@ -25,10 +25,19 @@ class DisplayRecruiterFull extends Component {
     // console.log(recruiter);
     let stars = []
     // if(this.state.average_rating){
-      for(let i=0;i<this.state.average_rating;i++){
+      for(let i=0;i<this.state.average_rating-1;i++){
         stars.push(<i key={i} className="fas fa-star"></i>)
       }
     // }
+    let star_decimal_point = this.state.average_rating % 1
+    // console.log("star_decimal_point");
+    // console.log(star_decimal_point);
+    // console.log(this.state.average_rating);
+    if(star_decimal_point > .75) { stars.push(<i key={"half"} className="fas fa-star"></i>)}
+    else if (star_decimal_point > .25) {stars.push(<i  key={"half"} className="fas fa-star-half"></i>)}
+    else if(star_decimal_point===0 && this.state.average_rating > 0) { stars.push(<i key={"half"} className="fas fa-star"></i>)}
+    //else push nothing since we round down
+    // <i class="fas fa-star-half"></i>
     return(
       <div className="DisplayRecruiterFull " >
         <div className="wrapper-relatives">
@@ -41,6 +50,7 @@ class DisplayRecruiterFull extends Component {
           <h3>{recruiter.website}</h3>
           <h3>{recruiter.location}</h3>
           {this.state.average_rating > 0 ? <h3><span style={{fontSize: "2em"}}>{stars}</span></h3> : null}
+
         </div>
         <button className="btn btn-success btn-large" onClick={this.handleClick}>ADD REVIEW</button>
 

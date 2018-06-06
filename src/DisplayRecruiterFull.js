@@ -20,7 +20,9 @@ class DisplayRecruiterFull extends Component {
   render(){
     let recruiter=this.props.state.recruiters.find((r)=>{ return r.id === this.props.state.selectedRecruiterId})
     let  sendState = {...this.state,...this.props.state}
-    console.log(recruiter);
+    // console.log(recruiter);
+
+
     return(
       <div className="DisplayRecruiterFull " >
         <div className="wrapper-relatives">
@@ -32,7 +34,7 @@ class DisplayRecruiterFull extends Component {
           <h3>{recruiter.linkedin}</h3>
           <h3>{recruiter.website}</h3>
           <h3>{recruiter.location}</h3>
-          <h3>{this.state.average_rating}</h3>
+          {this.state.average_rating > 0 ? <h3>Average Rating: {this.state.average_rating}</h3> : null}
 
         </div>
         <button className="btn btn-success btn-large" onClick={this.handleClick}>ADD REVIEW</button>

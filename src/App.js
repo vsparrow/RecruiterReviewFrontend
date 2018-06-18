@@ -9,8 +9,8 @@ class App extends Component {
 
   state = {
     authorization: "",
-    // url: "http://127.0.0.1:3000/",
-    url: "https://vsparrow-rrapi.herokuapp.com/",
+    url: "http://127.0.0.1:3000/",
+    // url: "https://vsparrow-rrapi.herokuapp.com/",
     login: true,
     currentPage: null,
     user_id: null
